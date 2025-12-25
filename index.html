@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivika | Portfolio</title>
+    <meta name="description" content="Portfolio of Shivika - C++, TensorFlow, and Open Source Developer.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="cursor-glow"></div>
+
+    <nav class="glass-nav">
+        <div class="logo">Shivika Jain</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="hero">
+        <div class="hero-content">
+            <p class="subtitle">Hello, I'm</p>
+            <h1 class="glitch-text" data-text="Shivika">Shivika</h1>
+            <h2 class="role">Open Source & <span class="highlight" id="typing-text"></span></h2>
+            <p class="bio-snippet">Software Engineer specialized in JAVA & JS. Building robust tools and contributing to
+                the future of AI infrastructure.</p>
+            <div class="cta-group">
+                <a href="#projects" class="btn primary">View Work</a>
+                <a href="#contact" class="btn secondary">Contact Me</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="tech-orb"></div>
+        </div>
+    </header>
+
+    <section id="about" class="reveal">
+        <div class="section-header">
+            <h2>About Me</h2>
+            <div class="line"></div>
+        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>I am a passionate developer with a deep focus on Systems Programming and Machine Learning
+                    infrastructure.</p>
+                <p>My journey involves diving deep into the internals of TensorFlow, optimizing C++ pipelines, and
+                    building tools that secure the digital landscape like PhishingDetector.</p>
+                <p>When I'm not coding, I'm mentoring others via CareerSeed or refining my open-source contributions.
+                </p>
+            </div>
+            <div class="stats-card glass-card">
+                <div class="stat">
+                    <span class="number">3+</span>
+                    <span class="label">Major Projects</span>
+                </div>
+                <div class="stat">
+                    <span class="number">JAVA</span>
+                    <span class="label">Core Expertise</span>
+                </div>
+                <div class="stat">
+                    <span class="number">TF</span>
+                    <span class="label">Contributor</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="reveal">
+        <div class="section-header">
+            <h2>Featured Projects</h2>
+            <div class="line"></div>
+        </div>
+        <div class="project-grid">
+            <!-- Project 1: PhishingDetector -->
+            <article class="project-card glass-card">
+                <div class="project-content">
+                    <div class="project-top">
+                        <span class="tag security">Cybersecurity</span>
+                        <h3>PhishingDetector</h3>
+                    </div>
+                    <p>An intelligent tool designed to analyze and flag potential phishing threats in real-time.
+                        Leverages heuristic analysis to protect users from social engineering attacks.</p>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>ML</span>
+                        <span>Web Security</span>
+                    </div>
+                    <div class="links">
+                        <a href="https://github.com/SHIVIKA330/demo_fishing" class="link-btn">View Code <span
+                                class="arrow">→</span></a>
+                    </div>
+                </div>
+                <div class="project-glow security-glow"></div>
+            </article>
+
+            <!-- Project 2: CareerSeed -->
+            <article class="project-card glass-card">
+                <div class="project-content">
+                    <div class="project-top">
+                        <span class="tag education">EdTech</span>
+                        <h3>CareerSeed</h3>
+                    </div>
+                    <p>A structured platform for career development and mentorship. Connecting aspiring developers with
+                        the resources and guidance they need to grow.</p>
+                    <div class="tech-stack">
+                        <span>Web Dev</span>
+                        <span>React</span>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="links">
+                        <a href="https://github.com/SHIVIKA330/CareerSeeds" class="link-btn">View Platform <span
+                                class="arrow">→</span></a>
+                    </div>
+                </div>
+                <div class="project-glow education-glow"></div>
+            </article>
+
+            <!-- Project 3: TensorFlow Contributions -->
+            <article class="project-card glass-card">
+                <div class="project-content">
+                    <div class="project-top">
+                        <span class="tag open-source">Open Source</span>
+                        <h3>TensorFlow Core & Lite</h3>
+                    </div>
+                    <p>Significant contributions to the TF ecosystem. Implemented `TfLiteLogSeverity` for better logging
+                        control and fixed critical crashes in `ResourceSparseApplyAdagradV2`.</p>
+                    <div class="tech-stack">
+                        <span>C++</span>
+                        <span>Bazel</span>
+                        <span>TFLite C API</span>
+                    </div>
+                    <div class="links">
+                        <a href="https://github.com/tensorflow/tensorflow/pulls" class="link-btn">See PRs <span
+                                class="arrow">→</span></a>
+                    </div>
+                </div>
+                <div class="project-glow os-glow"></div>
+            </article>
+        </div>
+    </section>
+
+    <section id="skills" class="reveal">
+        <div class="section-header">
+            <h2>Technical Arsenal</h2>
+            <div class="line"></div>
+        </div>
+        <div class="skills-wrapper">
+            <div class="skill-category">
+                <h3>Languages</h3>
+                <div class="skill-list">
+                    <div class="skill-item">JAVA</div>
+                    <div class="skill-item">C++</div>
+                    <div class="skill-item">JavaScript</div>
+                    <div class="skill-item">HTML/CSS</div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Technologies</h3>
+                <div class="skill-list">
+                    <div class="skill-item">TensorFlow</div>
+                    <div class="skill-item">Git & GitHub</div>
+                    <div class="skill-item">Bazel</div>
+                    <div class="skill-item">Docker</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <h2>Let's Build Together</h2>
+            <p>Interested in collaboration or just want to verify my git log?</p>
+            <a href="mailto:contact@shivika.dev" class="btn primary">Say Hello</a>
+            <div class="social-links">
+                <a href="https://github.com/shivika330" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/shivika-jain-533a36238/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Shivika. Built with 💻 & ☕.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

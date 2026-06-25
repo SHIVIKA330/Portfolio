@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Syne, JetBrains_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import CustomCursor from "@/components/ui/CustomCursor";
 import "./globals.css";
 
 const inter = Inter({
@@ -40,7 +41,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${syne.variable} ${jetbrainsMono.variable} font-sans antialiased text-text-primary bg-bg-base`}>
+      <body className={`${inter.variable} ${syne.variable} ${jetbrainsMono.variable} font-sans antialiased text-text-primary bg-bg-base relative min-h-screen bg-dots`}>
+        {/* Film grain noise overlay */}
+        <div className="fixed inset-0 bg-noise pointer-events-none z-[999]" />
+        
+        <CustomCursor />
         <Nav />
         {children}
         <Footer />

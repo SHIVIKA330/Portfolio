@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { motion, useReducedMotion } from "framer-motion";
+import { ShieldCheck, Target } from "lucide-react";
 
 interface CountUpProps {
   end: number;
@@ -78,65 +79,68 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 px-6 max-w-6xl mx-auto border-t border-border/30">
+    <section id="about" className="py-28 px-6 max-w-6xl mx-auto border-t border-border/30">
       <motion.div
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-1 lg:grid-cols-12 gap-12"
+        className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start"
       >
-        {/* Left Column: Bio */}
-        <div className="lg:col-span-7 flex flex-col justify-center space-y-6">
-          <div>
-            <span className="font-mono text-mint-400 text-[10px] uppercase tracking-[0.2em] font-semibold">
-              ABOUT ME
+        {/* Left Column: Biography (Spans 7 cols) */}
+        <div className="lg:col-span-7 space-y-8">
+          <div className="space-y-3">
+            <span className="font-mono text-mint-400 text-[10px] uppercase tracking-[0.25em] font-bold block">
+              BIOGRAPHY // 01
             </span>
-            <h2 className="font-display font-bold text-3xl md:text-4xl mt-2 text-text-primary">
-              Solving real problems with systems thinking.
+            <h2 className="font-display font-bold text-4xl md:text-5xl leading-tight text-text-primary">
+              Building systems, designing sprints.
             </h2>
           </div>
 
-          <div className="text-text-muted space-y-4 text-base md:text-lg leading-relaxed">
+          <div className="h-[1px] w-full bg-gradient-to-r from-border via-border/50 to-transparent" />
+
+          <div className="text-text-muted space-y-6 text-base md:text-lg leading-relaxed font-sans">
             <p>
-              CS student at GLA University, Mathura. I ship full-stack products for hackathons,
-              contribute to TensorFlow core, and solve real problems for gig workers, fintech
-              users, and communities.
+              I am a Computer Science student at GLA University, Mathura. Rather than building static sites, I focus on shipping high-performance full-stack applications at hackathons and contributing patches to the TensorFlow core runtime.
             </p>
             <p>
-              I think in systems, design in sprints, and deploy on Render. My passion lies in
-              building tools that empower people and bridging the gap between developers and open source.
+              My design principles favor clean, structural grid layouts, robust APIs, and meaningful micro-interactions that bridge the gap between complex software backend engineering and high-fidelity interfaces.
             </p>
           </div>
 
-          <div className="pt-4 border-t border-border flex flex-col sm:flex-row gap-4 sm:gap-12">
-            <div>
-              <span className="block text-xs font-mono text-text-muted uppercase">Currently</span>
-              <span className="text-text-primary text-sm font-semibold mt-1 block">
-                B.Tech CSE · GLA University
+          {/* Quick Details Row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-border/35">
+            <div className="flex flex-col gap-1">
+              <span className="text-[10px] font-mono text-text-muted uppercase tracking-wider">Education</span>
+              <span className="text-text-primary text-sm font-semibold">
+                B.Tech Computer Science · GLA University
               </span>
             </div>
-            <div>
-              <span className="block text-xs font-mono text-text-muted uppercase">Focused on</span>
-              <span className="text-text-primary text-sm font-semibold mt-1 block">
-                Fintech · AI · Social Impact
+            <div className="flex flex-col gap-1">
+              <span className="text-[10px] font-mono text-text-muted uppercase tracking-wider">Core Focus</span>
+              <span className="text-text-primary text-sm font-semibold">
+                Fintech · AI / Machine Vision · Social Impact
               </span>
             </div>
           </div>
         </div>
 
-        {/* Right Column: Stat Cards */}
+        {/* Right Column: Glassmorphic Grid (Spans 5 cols) */}
         <div className="lg:col-span-5 grid grid-cols-2 gap-4">
           {statCards.map((stat, idx) => (
             <motion.div
               key={idx}
-              whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
-              className="bg-bg-surface border border-border rounded-2xl p-6 flex flex-col justify-center transition-all duration-300 hover:border-violet-500/30 hover:shadow-[0_0_30px_rgba(124,111,255,0.06)]"
+              whileHover={shouldReduceMotion ? {} : { y: -4, borderColor: "rgba(124,111,255,0.3)" }}
+              className="bg-bg-surface/40 backdrop-blur-md border border-border/80 rounded-2xl p-6 flex flex-col justify-center transition-all duration-300 hover:shadow-[0_0_30px_rgba(124,111,255,0.06)] relative overflow-hidden group"
             >
-              <span className="font-display font-bold text-4xl md:text-5xl bg-gradient-primary bg-clip-text text-transparent select-none">
+              {/* Subtle accent corner highlight */}
+              <div className="absolute top-0 right-0 w-8 h-8 bg-gradient-to-bl from-violet-500/10 to-transparent pointer-events-none" />
+              
+              <span className="font-display font-extrabold text-5xl bg-gradient-primary bg-clip-text text-transparent select-none">
                 <CountUp end={stat.end} suffix={stat.suffix} />
               </span>
-              <span className="text-xs font-mono text-text-muted mt-2 tracking-wider uppercase font-semibold">
+              <span className="text-[10px] font-mono text-text-muted mt-3 tracking-widest uppercase font-semibold">
                 {stat.label}
               </span>
             </motion.div>
@@ -144,24 +148,48 @@ export default function About() {
         </div>
       </motion.div>
 
-      {/* GitHub Achievements Row */}
+      {/* GitHub Achievements Area - Remapped as a detailed glowing tray */}
       <motion.div
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row items-center gap-4 text-sm"
+        className="mt-20 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-6"
       >
-        <span className="font-mono text-xs text-text-muted uppercase tracking-wider font-semibold">
-          GitHub Achievements:
-        </span>
-        <div className="flex gap-3">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-border bg-bg-surface text-text-primary text-xs font-medium">
-            🦈 Pull Shark
+        <div className="space-y-1 text-center md:text-left">
+          <span className="font-mono text-[10px] text-mint-400 uppercase tracking-widest block font-bold">
+            ACHIEVEMENTS // GITHUB
           </span>
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-border bg-bg-surface text-text-primary text-xs font-medium">
-            🎯 YOLO
+          <span className="text-xs text-text-muted block">
+            Recognitions earned in open source contributions and pull requests.
           </span>
+        </div>
+        <div className="flex flex-wrap gap-4 justify-center">
+          {/* Pull Shark */}
+          <div className="group flex items-center gap-3 px-5 py-3 rounded-xl border border-border bg-bg-surface/50 hover:border-violet-500/35 hover:shadow-[0_0_20px_rgba(124,111,255,0.08)] transition-all duration-300">
+            <div className="p-2 bg-bg-elevated rounded-lg text-violet-400">
+              <ShieldCheck size={18} />
+            </div>
+            <div>
+              <span className="block text-xs font-semibold text-text-primary group-hover:text-violet-400 transition-colors">
+                Pull Shark
+              </span>
+              <span className="block text-[10px] font-mono text-text-muted uppercase">PR Merges</span>
+            </div>
+          </div>
+
+          {/* YOLO */}
+          <div className="group flex items-center gap-3 px-5 py-3 rounded-xl border border-border bg-bg-surface/50 hover:border-mint-500/35 hover:shadow-[0_0_20px_rgba(0,217,165,0.08)] transition-all duration-300">
+            <div className="p-2 bg-bg-elevated rounded-lg text-mint-400">
+              <Target size={18} />
+            </div>
+            <div>
+              <span className="block text-xs font-semibold text-text-primary group-hover:text-mint-400 transition-colors">
+                YOLO
+              </span>
+              <span className="block text-[10px] font-mono text-text-muted uppercase">Direct Merges</span>
+            </div>
+          </div>
         </div>
       </motion.div>
     </section>

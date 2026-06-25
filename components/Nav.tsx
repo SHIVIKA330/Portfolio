@@ -1,0 +1,87 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+
+export default function Nav() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 80) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { label: "About", href: "#about" },
+    { label: "Projects", href: "#projects" },
+    { label: "Experience", href: "#experience" },
+    { label: "Skills", href: "#expertise" },
+    { label: "Contact", href: "#contact" },
+  ];
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "backdrop-blur-md bg-[#09090F]/80 border-b border-border py-4"
+          : "bg-transparent py-6"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
+        {/* Logo */}
+        <a
+          href="#hero"
+          className="font-display font-extrabold text-2xl bg-gradient-to-r from-violet-500 to-mint-400 bg-clip-text text-transparent hover:opacity-90 transition-opacity"
+        >
+          SJ
+        </a>
+
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center space-x-8">
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="text-sm font-medium text-text-muted hover:text-text-primary transition-colors hover:underline hover:underline-offset-4 decoration-violet-500/50"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+
+        {/* Mobile Toggle */}
+        <button
+          className="md:hidden text-text-primary p-2 focus:outline-none focus:ring-2 focus:ring-violet-500 rounded"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Drawer */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 bg-[#09090F] border-b border-border px-6 py-6 shadow-xl flex flex-col space-y-4 animate-[slideDown_0.2s_ease-out]">
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-base font-medium text-text-muted hover:text-text-primary transition-colors py-2 border-b border-border/30 last:border-0"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      )}
+    </nav>
+  );
+}

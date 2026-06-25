@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Syne, JetBrains_Mono } from "next/font/google";
+import { Inter, Syne, JetBrains_Mono, DM_Serif_Display } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/ui/CustomCursor";
@@ -23,6 +23,12 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400"],
 });
 
+const dmSerif = DM_Serif_Display({
+  subsets: ["latin"],
+  variable: "--font-dm-serif",
+  weight: ["400"],
+});
+
 export const metadata: Metadata = {
   title: 'Shivika Jain — Full-Stack Developer & Hackathon Builder',
   description: 'CS student at GLA University. TensorFlow contributor. Building at the intersection of fintech, AI, and social impact.',
@@ -41,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${syne.variable} ${jetbrainsMono.variable} font-sans antialiased text-text-primary bg-bg-base relative min-h-screen bg-dots`}>
+      <body className={`${inter.variable} ${syne.variable} ${jetbrainsMono.variable} ${dmSerif.variable} font-sans antialiased text-text-primary bg-bg-base relative min-h-screen bg-dots`}>
         {/* Film grain noise overlay */}
         <div className="fixed inset-0 bg-noise pointer-events-none z-[999]" />
         

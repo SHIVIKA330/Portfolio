@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { ArrowRight, Code, Cpu, ShieldAlert, Sparkles, Terminal } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 const roles = [
   "Full-Stack Developer",
@@ -10,13 +11,6 @@ const roles = [
   "TensorFlow Contributor",
   "Fintech × AI Builder",
   "Open Source Enthusiast",
-];
-
-const capabilities = [
-  { icon: <Terminal size={14} />, label: "Next.js & TypeScript" },
-  { icon: <Cpu size={14} />, label: "TensorFlow C API" },
-  { icon: <Code size={14} />, label: "Supabase & Razorpay" },
-  { icon: <ShieldAlert size={14} />, label: "AI Gestures & Vision" },
 ];
 
 export default function Hero() {
@@ -35,53 +29,72 @@ export default function Hero() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.1 },
+      transition: { staggerChildren: 0.15, delayChildren: 0.1 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: shouldReduceMotion ? 0 : -30 },
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 30 },
     visible: {
       opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: "easeOut" as const },
+      y: 0,
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const },
     },
   };
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-28 pb-20 max-w-6xl mx-auto"
+      className="relative min-h-screen bg-retro-green text-retro-cream overflow-hidden flex flex-col justify-between pt-32 pb-24 px-6 md:px-12 z-10"
     >
-      {/* Background Breathing Glow Orb - Positioned dynamically behind content */}
-      <div className="absolute right-[10%] top-[25%] pointer-events-none z-0">
-        <div className="glow-orb" />
+      {/* Background Dots Grid Overlay with Retro Green Accent */}
+      <div className="absolute inset-0 bg-dots opacity-[0.03] pointer-events-none" />
+
+      {/* Retro-Orange Spotlights */}
+      <div className="absolute top-[15%] right-[-10%] w-[500px] h-[500px] rounded-full bg-retro-orange/10 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-[10%] left-[-15%] w-[400px] h-[400px] rounded-full bg-retro-orange/5 blur-[80px] pointer-events-none" />
+
+      {/* Repeating Outlined Background Text Rows drifting left and right */}
+      <div className="absolute inset-0 flex flex-col justify-center space-y-12 select-none pointer-events-none opacity-5 z-0 overflow-hidden">
+        <motion.div
+          animate={{ x: [0, -1000] }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          className="whitespace-nowrap font-serif text-8xl md:text-[10rem] text-stroke-cream leading-none"
+        >
+          SHIVIKA JAIN • FULL STACK DEVELOPER • HACKATHON BUILDER • SHIVIKA JAIN • FULL STACK DEVELOPER •
+        </motion.div>
+        <motion.div
+          animate={{ x: [-1000, 0] }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          className="whitespace-nowrap font-serif text-8xl md:text-[10rem] text-stroke-cream leading-none"
+        >
+          TENSORFLOW CONTRIBUTOR • FINTECH • AI VISION • TENSORFLOW CONTRIBUTOR • FINTECH • AI VISION •
+        </motion.div>
       </div>
 
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center z-10"
+        className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10 my-auto"
       >
-        {/* Left Column: Asymmetrical Heading and Tags */}
-        <div className="lg:col-span-8 flex flex-col items-start text-left space-y-8">
-          <motion.div variants={itemVariants} className="space-y-4">
-            {/* Minimal tag */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-violet-500/20 bg-violet-500/5 text-violet-400 font-mono text-[10px] uppercase tracking-widest">
-              <Sparkles size={10} /> Currently Shipping In 2026
+        {/* Left Column: Headline and Biography */}
+        <div className="lg:col-span-7 flex flex-col items-start text-left space-y-6 md:space-y-8">
+          <motion.div variants={itemVariants} className="space-y-3">
+            {/* Hand-crafted Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-retro-orange/30 bg-retro-orange/5 text-retro-orange font-mono text-xs uppercase tracking-widest font-semibold">
+              <Sparkles size={12} className="animate-pulse" />
+              Currently Shipping In 2026
             </div>
-            
-            {/* Giant Title */}
-            <h1
-              className="font-display font-extrabold text-[#F0EFF8] leading-[0.9] tracking-tight cursor select-none"
-              style={{ fontSize: "clamp(3.5rem, 9vw, 7.5rem)" }}
-            >
-              Shivika Jain
+
+            {/* Giant Elegant Serif Title */}
+            <h1 className="font-serif text-6xl md:text-8xl xl:text-9xl leading-[0.9] tracking-tight">
+              Shivika <br />
+              <span className="text-retro-orange">Jain</span>
             </h1>
 
             {/* Typewriter role cycling */}
-            <div className="h-8 flex items-center font-mono text-base md:text-lg font-medium text-mint-400 tracking-wide mt-2">
+            <div className="h-8 flex items-center font-mono text-base md:text-lg text-retro-cream/90 tracking-wide mt-2 border-l-2 border-retro-orange pl-3">
               {shouldReduceMotion ? (
                 <span>→ Full-Stack Developer & AI Builder</span>
               ) : (
@@ -91,7 +104,7 @@ export default function Hero() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 10 }}
-                    transition={{ duration: 0.25 }}
+                    transition={{ duration: 0.35, ease: "easeInOut" }}
                   >
                     → {roles[currentRoleIndex]}
                   </motion.span>
@@ -100,21 +113,21 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Thin horizontal editorial divider */}
+          {/* Thin separation line */}
           <motion.div
             variants={itemVariants}
-            className="w-full max-w-xl h-[1px] bg-gradient-to-r from-border to-transparent"
+            className="w-full max-w-xl h-[1px] bg-gradient-to-r from-retro-cream/20 via-retro-cream/10 to-transparent"
           />
 
           {/* Tagline */}
           <motion.p
             variants={itemVariants}
-            className="text-text-muted text-base md:text-lg max-w-xl leading-relaxed"
+            className="text-retro-cream/80 text-base md:text-lg max-w-xl leading-relaxed font-sans"
           >
             I build at the intersection of{" "}
-            <span className="text-text-primary font-semibold hover:text-violet-400 transition-colors">fintech</span>,{" "}
-            <span className="text-text-primary font-semibold hover:text-mint-400 transition-colors">AI</span>, and{" "}
-            <span className="text-text-primary font-semibold hover:text-violet-400 transition-colors">social impact</span>.
+            <span className="text-retro-orange font-semibold hover:underline decoration-2 transition-all">fintech</span>,{" "}
+            <span className="text-retro-orange font-semibold hover:underline decoration-2 transition-all">AI</span>, and{" "}
+            <span className="text-retro-orange font-semibold hover:underline decoration-2 transition-all">social impact</span>.
             Solving real-world problems through robust full-stack software and open source contributions.
           </motion.p>
 
@@ -125,66 +138,89 @@ export default function Hero() {
           >
             <a
               href="#projects"
-              className="group flex items-center justify-center gap-2 bg-gradient-primary hover:opacity-95 text-bg-base font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(124,111,255,0.25)] hover:shadow-[0_0_30px_rgba(124,111,255,0.4)] cursor-pointer"
+              className="group flex items-center justify-center gap-2 bg-retro-orange text-retro-dark font-serif font-bold px-8 py-4 rounded-xl border-2 border-retro-dark shadow-[4px_4px_0px_#111111] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all duration-300 cursor-pointer text-center"
             >
               View Projects
-              <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform" />
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="/resume.pdf"
               download
-              className="flex items-center justify-center border border-border hover:border-violet-500/50 hover:bg-bg-elevated/40 text-text-primary font-medium px-8 py-4 rounded-xl transition-all duration-300 cursor-pointer"
+              className="flex items-center justify-center gap-2 border-2 border-retro-cream text-retro-cream font-serif font-bold px-8 py-4 rounded-xl hover:bg-retro-cream hover:text-retro-green transition-all duration-300 cursor-pointer text-center"
             >
               Download Resume
             </a>
           </motion.div>
         </div>
 
-        {/* Right Column: Handcrafted Terminal-Style Interactive Dashboard */}
+        {/* Right Column: Handcrafted Portrait Collage */}
         <motion.div
           variants={itemVariants}
-          className="lg:col-span-4 hidden lg:block"
+          className="lg:col-span-5 flex justify-center items-center relative"
         >
-          <div className="bg-bg-surface border border-border rounded-2xl p-6 shadow-2xl relative overflow-hidden group">
-            {/* Subtle glow border */}
-            <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-violet-500/20 to-transparent" />
+          {/* Asymmetric offset frame */}
+          <div className="relative w-full max-w-[320px] aspect-[4/5] md:aspect-[3/4]">
+            {/* Orange Offset Card behind the image */}
+            <div className="absolute inset-0 bg-retro-orange border-2 border-retro-dark rounded-2xl translate-x-4 translate-y-4" />
             
-            {/* Window header */}
-            <div className="flex items-center gap-2 mb-6 border-b border-border/40 pb-4">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]" />
-              <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
-              <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
-              <span className="font-mono text-[10px] text-text-muted ml-4 select-none">
-                capabilities.config.json
-              </span>
+            {/* Black border backdrop for contrast */}
+            <div className="absolute inset-0 bg-retro-dark rounded-2xl translate-x-2 translate-y-2 border border-retro-cream/10" />
+
+            {/* Actual Portrait Container */}
+            <div className="absolute inset-0 bg-[#D4C3B3] border-2 border-retro-dark rounded-2xl overflow-hidden group">
+              <Image
+                src="/shivika-portrait.png"
+                alt="Shivika Jain Portrait"
+                fill
+                priority
+                className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-105 group-hover:scale-100"
+              />
+              
+              {/* Overlay vignette */}
+              <div className="absolute inset-0 bg-gradient-to-t from-retro-dark/50 via-transparent to-transparent pointer-events-none" />
+              
+              {/* Ticket-like overlay tag */}
+              <div className="absolute bottom-4 left-4 bg-retro-dark/90 backdrop-blur-sm border border-retro-cream/10 text-retro-orange text-[9px] font-mono uppercase tracking-widest px-3 py-1.5 rounded-lg flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-retro-orange animate-pulse" />
+                STATUS: IN LAB
+              </div>
             </div>
 
-            {/* Core Capability Chips */}
-            <div className="space-y-4">
-              {capabilities.map((cap, idx) => (
-                <motion.div
-                  key={idx}
-                  whileHover={shouldReduceMotion ? {} : { x: 6, borderColor: "rgba(124,111,255,0.3)" }}
-                  className="flex items-center gap-3 p-3.5 rounded-xl border border-border/80 bg-bg-elevated/40 backdrop-blur-sm transition-all duration-300"
-                >
-                  <div className="text-violet-400">
-                    {cap.icon}
-                  </div>
-                  <span className="font-mono text-xs text-text-muted group-hover:text-text-primary transition-colors">
-                    {cap.label}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Simulated mini stats line */}
-            <div className="mt-8 pt-4 border-t border-border/40 flex justify-between items-center text-[10px] font-mono text-text-muted">
-              <span>STATUS: READY</span>
-              <span className="animate-pulse text-mint-400">● ACTIVE</span>
+            {/* Decorative retro star symbol */}
+            <div className="absolute -top-3 -right-3 w-8 h-8 bg-retro-cream border-2 border-retro-dark text-retro-orange rounded-full flex items-center justify-center text-sm font-bold shadow-[2px_2px_0px_#111111]">
+              ✦
             </div>
           </div>
         </motion.div>
       </motion.div>
+
+      {/* Bottom Spin Badge (Scroll indicator) */}
+      <div className="relative flex justify-center mt-8 lg:mt-0 z-20">
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          className="relative w-24 h-24 flex items-center justify-center cursor-pointer"
+          onClick={() => {
+            document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          <svg className="absolute w-full h-full" viewBox="0 0 100 100">
+            <path
+              id="circlePath"
+              d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
+              fill="transparent"
+            />
+            <text className="font-mono text-[7px] uppercase fill-retro-cream/70 tracking-[0.16em] font-bold">
+              <textPath xlinkHref="#circlePath" startOffset="0%">
+                scroll down • explore work • scroll down • explore work •
+              </textPath>
+            </text>
+          </svg>
+          <div className="w-10 h-10 rounded-full bg-retro-orange border-2 border-retro-dark flex items-center justify-center text-retro-dark font-bold hover:scale-110 transition-transform">
+            ↓
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }

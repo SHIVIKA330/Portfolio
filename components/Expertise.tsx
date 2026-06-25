@@ -64,53 +64,58 @@ export default function Expertise() {
   };
 
   return (
-    <section id="expertise" className="py-24 px-6 max-w-6xl mx-auto border-t border-border/30">
-      {/* Heading */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={sectionVariants}
-        className="mb-16"
-      >
-        <span className="font-mono text-mint-400 text-[10px] uppercase tracking-[0.2em] font-semibold">
-          ABILITIES
-        </span>
-        <h2 className="font-display font-bold text-3xl md:text-4xl mt-2 text-text-primary">
-          What I Work With
-        </h2>
-      </motion.div>
+    <section id="expertise" className="bg-retro-cream text-retro-dark py-24 px-6 md:px-12 border-t-2 border-retro-dark relative overflow-hidden">
+      {/* Background Dots */}
+      <div className="absolute inset-0 bg-dots opacity-[0.04] pointer-events-none" />
 
-      {/* Grid of Clusters */}
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-      >
-        {skillsData.map((group, idx) => (
-          <motion.div
-            key={idx}
-            variants={itemVariants}
-            className="bg-bg-surface/30 border border-border/60 p-6 rounded-2xl flex flex-col gap-4 hover:border-violet-500/20 transition-colors duration-300"
-          >
-            <span className="font-mono text-mint-400 text-[10px] uppercase tracking-[0.2em] font-bold">
-              {group.category}
-            </span>
-            <div className="flex flex-wrap gap-2">
-              {group.skills.map((skill, sIdx) => (
-                <span
-                  key={sIdx}
-                  className="bg-bg-elevated text-text-muted border border-border rounded-full px-3.5 py-1.5 text-xs font-mono hover:border-violet-500/50 hover:text-text-primary hover:bg-bg-elevated/80 transition-all duration-300 cursor-default"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Heading */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={sectionVariants}
+          className="mb-16"
+        >
+          <span className="font-mono text-retro-olive text-xs tracking-[0.2em] font-semibold">
+            ABILITIES // 06
+          </span>
+          <h2 className="font-serif font-bold text-4xl mt-2">
+            What I Work With
+          </h2>
+        </motion.div>
+
+        {/* Grid of Clusters */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {skillsData.map((group, idx) => (
+            <motion.div
+              key={idx}
+              variants={itemVariants}
+              className="bg-retro-cream border-2 border-retro-dark p-6 rounded-2xl flex flex-col gap-4 shadow-[4px_4px_0px_#111111] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-300"
+            >
+              <span className="font-mono text-retro-olive text-xs tracking-[0.2em] font-bold">
+                {group.category}
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {group.skills.map((skill, sIdx) => (
+                  <span
+                    key={sIdx}
+                    className="bg-retro-dark text-retro-cream border border-retro-dark rounded-full px-3.5 py-1.5 text-xs font-mono hover:bg-retro-orange hover:text-retro-dark transition-all duration-200 cursor-default"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
 }

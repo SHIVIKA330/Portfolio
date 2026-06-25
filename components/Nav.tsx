@@ -31,7 +31,7 @@ export default function Nav() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "backdrop-blur-md bg-[#09090F]/80 border-b border-border py-4"
+          ? "backdrop-blur-md bg-retro-dark/95 border-b border-retro-cream/10 py-4"
           : "bg-transparent py-6"
       }`}
     >
@@ -39,7 +39,7 @@ export default function Nav() {
         {/* Logo */}
         <a
           href="#hero"
-          className="font-display font-extrabold text-2xl bg-gradient-to-r from-violet-500 to-mint-400 bg-clip-text text-transparent hover:opacity-90 transition-opacity"
+          className="font-serif font-extrabold text-2xl text-retro-orange hover:text-retro-cream transition-colors tracking-tight"
         >
           SJ
         </a>
@@ -50,7 +50,7 @@ export default function Nav() {
             <a
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-text-muted hover:text-text-primary transition-colors hover:underline hover:underline-offset-4 decoration-violet-500/50"
+              className="text-sm font-mono text-retro-cream/70 hover:text-retro-orange transition-colors hover:underline hover:underline-offset-4 decoration-retro-orange/50"
             >
               {link.label}
             </a>
@@ -59,7 +59,7 @@ export default function Nav() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-text-primary p-2 focus:outline-none focus:ring-2 focus:ring-violet-500 rounded"
+          className="md:hidden text-retro-cream p-2 focus:outline-none focus:ring-2 focus:ring-retro-orange rounded"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -69,13 +69,13 @@ export default function Nav() {
 
       {/* Mobile Drawer */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-[#09090F] border-b border-border px-6 py-6 shadow-xl flex flex-col space-y-4 animate-[slideDown_0.2s_ease-out]">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-retro-dark border-b border-retro-cream/10 px-6 py-6 shadow-xl flex flex-col space-y-4 animate-[slideDown_0.2s_ease-out]">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-base font-medium text-text-muted hover:text-text-primary transition-colors py-2 border-b border-border/30 last:border-0"
+              className="text-base font-mono text-retro-cream/70 hover:text-retro-orange transition-colors py-2 border-b border-retro-cream/5 last:border-0"
             >
               {link.label}
             </a>

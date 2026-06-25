@@ -77,11 +77,11 @@ export default function CustomCursor() {
         animate={{
           width: isHovered ? 60 : 36,
           height: isHovered ? 60 : 36,
-          borderColor: isHovered ? "rgba(0, 217, 165, 0.4)" : "rgba(124, 111, 255, 0.3)",
-          backgroundColor: isHovered ? "rgba(0, 217, 165, 0.05)" : "rgba(124, 111, 255, 0.02)",
+          borderColor: isHovered ? "rgba(255, 163, 26, 0.6)" : "rgba(255, 163, 26, 0.3)",
+          backgroundColor: isHovered ? "rgba(255, 163, 26, 0.1)" : "rgba(255, 163, 26, 0.02)",
         }}
         transition={{ type: "tween", ease: "backOut", duration: 0.2 }}
-        className="hidden md:block pointer-events-none rounded-full border border-violet-500/35 z-[9999] shadow-[0_0_15px_rgba(124,111,255,0.05)]"
+        className="hidden md:block pointer-events-none rounded-full border z-[9999] shadow-[0_0_15px_rgba(255,163,26,0.15)]"
       />
       {/* Inner pinpoint dot */}
       <motion.div
@@ -96,9 +96,9 @@ export default function CustomCursor() {
         }}
         animate={{
           scale: isHovered ? 1.5 : 1,
-          backgroundColor: isHovered ? "#00D9A5" : "#7C6FFF",
+          backgroundColor: "#FFA31A",
         }}
-        className="hidden md:block w-1.5 h-1.5 pointer-events-none rounded-full bg-violet-500 z-[9999]"
+        className="hidden md:block w-1.5 h-1.5 pointer-events-none rounded-full z-[9999]"
       />
     </>
   );

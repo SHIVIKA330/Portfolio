@@ -31,9 +31,9 @@ const timelineData = [
   },
   {
     date: "2025",
-    title: "GSSoC Ambassador (Pursuing)",
+    title: "GSSoC Ambassador (Campus Liaison)",
     subtitle: "GirlScript Summer of Code · GLA University campus",
-    location: "Remote / Campus Liaison",
+    location: "Remote / Campus",
   },
   {
     date: "2024",
@@ -42,7 +42,7 @@ const timelineData = [
     location: "Mathura Campus",
   },
   {
-    date: "2023–",
+    date: "2023–Present",
     title: "B.Tech Computer Science Engineering · Ongoing",
     subtitle: "GLA University, Mathura",
     location: "Mathura, UP",
@@ -62,86 +62,86 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="py-28 px-6 max-w-6xl mx-auto border-t border-border/30">
-      {/* Heading */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={headerVariants}
-        className="mb-20"
-      >
-        <span className="font-mono text-mint-400 text-[10px] uppercase tracking-[0.25em] font-bold block">
-          EXPERIENCE // 03
-        </span>
-        <h2 className="font-display font-bold text-4xl md:text-5xl mt-2 text-text-primary">
-          Where I&apos;ve Been
-        </h2>
-      </motion.div>
+    <section id="experience" className="bg-retro-cream text-retro-dark py-28 px-6 md:px-12 border-t-2 border-retro-dark relative overflow-hidden">
+      {/* Background Dots */}
+      <div className="absolute inset-0 bg-dots opacity-[0.04] pointer-events-none" />
 
-      {/* Timeline Structure */}
-      <div className="relative border-l border-border/60 pl-8 md:pl-12 ml-2 md:ml-6 space-y-12">
-        {/* Glow track effect */}
-        <div className="absolute top-0 bottom-0 left-0 w-[1px] bg-gradient-to-b from-violet-500/30 via-mint-400/20 to-transparent pointer-events-none" />
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Heading */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={headerVariants}
+          className="mb-20"
+        >
+          <span className="font-mono text-retro-olive text-xs tracking-[0.25em] font-bold block">
+            EXPERIENCE // 03
+          </span>
+          <h2 className="font-serif font-bold text-4xl md:text-5xl mt-2">
+            Where I&apos;ve Been
+          </h2>
+        </motion.div>
 
-        {timelineData.map((item, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: shouldReduceMotion ? 0 : idx * 0.05 }}
-            className="relative group"
-          >
-            {/* Timeline Connector Pin */}
-            <div className="absolute -left-[41px] md:-left-[57px] top-2 flex items-center justify-center">
-              {item.isLatest ? (
-                <div className="relative flex h-5 w-5">
-                  {!shouldReduceMotion && (
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-500/60 opacity-75"></span>
-                  )}
-                  <span className="relative inline-flex rounded-full h-5 w-5 bg-violet-500 shadow-[0_0_15px_rgba(124,111,255,0.7)] border border-violet-400/40"></span>
-                </div>
-              ) : (
-                <span className="h-4 w-4 rounded-full bg-bg-base border border-border/80 group-hover:border-violet-500/50 group-hover:shadow-[0_0_8px_rgba(124,111,255,0.4)] transition-all duration-300"></span>
-              )}
-            </div>
-
-            {/* Dynamic Card Container */}
+        {/* Timeline Structure */}
+        <div className="relative border-l-2 border-retro-dark pl-6 md:pl-10 ml-2 md:ml-6 space-y-12">
+          {timelineData.map((item, idx) => (
             <motion.div
-              whileHover={shouldReduceMotion ? {} : { x: 8 }}
-              className="bg-bg-surface/30 backdrop-blur-sm border border-border/80 p-6 rounded-2xl transition-all duration-300 hover:border-violet-500/20 hover:bg-bg-surface/60 hover:shadow-[0_0_40px_rgba(124,111,255,0.05)] relative overflow-hidden group"
+              key={idx}
+              initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: shouldReduceMotion ? 0 : idx * 0.05 }}
+              className="relative group"
             >
-              {/* Corner accents */}
-              <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-bl from-violet-500/5 to-transparent pointer-events-none" />
-              
-              <div className="flex flex-wrap items-center justify-between gap-4 mb-3">
-                <div className="flex items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-border/80 bg-bg-elevated/40 text-mint-400 text-[10px] font-mono font-bold select-none">
-                    <Calendar size={10} /> {item.date}
-                  </span>
-                  {item.isLatest && (
-                    <span className="inline-flex items-center gap-1 text-[9px] font-mono text-violet-400 font-bold uppercase tracking-wider animate-pulse">
-                      <Sparkles size={8} /> Active
+              {/* Timeline Diamond Star Indicator */}
+              <div className="absolute -left-[33px] md:-left-[49px] top-4 w-4 h-4 bg-retro-orange border-2 border-retro-dark rotate-45 flex items-center justify-center shadow-[1px_1px_0px_#111111] group-hover:scale-125 transition-transform" />
+
+              {/* Dynamic Card Container */}
+              <motion.div
+                whileHover={shouldReduceMotion ? {} : { x: 8 }}
+                className={`border-2 border-retro-dark p-6 rounded-2xl transition-all duration-300 relative overflow-hidden group ${
+                  item.isLatest
+                    ? "bg-retro-orange text-retro-dark shadow-[6px_6px_0px_#111111]"
+                    : "bg-retro-cream hover:bg-retro-olive/10 shadow-[4px_4px_0px_#111111] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
+                }`}
+              >
+                <div className="flex flex-wrap items-center justify-between gap-4 mb-3">
+                  <div className="flex items-center gap-2">
+                    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-retro-dark/20 text-[10px] font-mono font-bold select-none ${
+                      item.isLatest ? "bg-retro-dark text-retro-cream" : "bg-retro-dark/5 text-retro-olive"
+                    }`}>
+                      <Calendar size={10} /> {item.date}
                     </span>
-                  )}
+                    {item.isLatest && (
+                      <span className="inline-flex items-center gap-1 text-[9px] font-mono text-retro-dark font-extrabold uppercase tracking-wider animate-pulse">
+                        <Sparkles size={8} /> Latest Hack
+                      </span>
+                    )}
+                  </div>
+
+                  <span className={`inline-flex items-center gap-1 text-[10px] font-mono ${
+                    item.isLatest ? "text-retro-dark/85" : "text-retro-olive"
+                  }`}>
+                    <MapPin size={10} /> {item.location}
+                  </span>
                 </div>
 
-                <span className="inline-flex items-center gap-1 text-[10px] font-mono text-text-muted">
-                  <MapPin size={10} /> {item.location}
-                </span>
-              </div>
-
-              <h3 className="text-lg md:text-xl font-display font-bold text-text-primary group-hover:text-violet-400 transition-colors">
-                {item.title}
-              </h3>
-              
-              <p className="text-sm text-text-muted mt-2 leading-relaxed font-sans font-medium">
-                {item.subtitle}
-              </p>
+                <h3 className={`text-lg md:text-xl font-serif font-bold ${
+                  item.isLatest ? "text-retro-dark" : "text-retro-dark group-hover:text-retro-orange transition-colors"
+                }`}>
+                  {item.title}
+                </h3>
+                
+                <p className={`text-sm mt-2 leading-relaxed font-sans font-medium ${
+                  item.isLatest ? "text-retro-dark/85" : "text-retro-dark/75"
+                }`}>
+                  {item.subtitle}
+                </p>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -81,3 +81,21 @@ body {
   opacity: 0.025;
   pointer-events: none;
 }
+
+/* Custom text stroke utilities */
+.text-stroke-cream {
+  -webkit-text-stroke: 1px #F6F4EB;
+  color: transparent;
+}
+.text-stroke-green {
+  -webkit-text-stroke: 1px #1E3524;
+  color: transparent;
+}
+.text-stroke-dark {
+  -webkit-text-stroke: 1px #111111;
+  color: transparent;
+}
+.text-stroke-orange {
+  -webkit-text-stroke: 1px #FFA31A;
+  color: transparent;
+}

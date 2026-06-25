@@ -9,6 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        'retro-green': '#1E3524',
+        'retro-cream': '#F6F4EB',
+        'retro-orange': '#FFA31A',
+        'retro-dark': '#111111',
+        'retro-olive': '#6E8A76',
         'bg-base':     '#09090F',
         'bg-surface':  '#111118',
         'bg-elevated': '#1A1A28',
@@ -21,6 +26,7 @@ const config: Config = {
       fontFamily: {
         sans:    ['var(--font-inter)', 'sans-serif'],
         display: ['var(--font-syne)', 'sans-serif'],
+        serif:   ['var(--font-dm-serif)', 'serif'],
         mono:    ['var(--font-jetbrains)', 'monospace'],
       },
       backgroundImage: {

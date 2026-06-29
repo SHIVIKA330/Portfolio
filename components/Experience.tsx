@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
-import { Sparkles, Calendar, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
+import { Calendar, MapPin } from "lucide-react";
 
 const timelineData = [
   {
@@ -9,7 +9,6 @@ const timelineData = [
     title: "INTEGRTR × GLA Hackathon · Team 08",
     subtitle: "HR Synth Data Pipeline — TypeScript monorepo, 48hr sprint",
     location: "GLA University",
-    isLatest: true,
   },
   {
     date: "2026",
@@ -50,23 +49,18 @@ const timelineData = [
 ];
 
 export default function Experience() {
-  const shouldReduceMotion = useReducedMotion();
-
   const headerVariants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" as const },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
   return (
-    <section id="experience" className="bg-retro-cream text-retro-dark py-28 px-6 md:px-12 border-t-2 border-retro-dark relative overflow-hidden">
-      {/* Background Dots */}
-      <div className="absolute inset-0 bg-dots opacity-[0.04] pointer-events-none" />
-
-      <div className="max-w-6xl mx-auto relative z-10">
+    <section id="experience" className="bg-bg-surface text-text-primary py-28 px-6 md:px-12 border-t border-border relative overflow-hidden">
+      <div className="max-w-5xl mx-auto relative z-10">
         {/* Heading */}
         <motion.div
           initial="hidden"
@@ -75,70 +69,48 @@ export default function Experience() {
           variants={headerVariants}
           className="mb-20"
         >
-          <span className="font-mono text-retro-olive text-xs tracking-[0.25em] font-bold block">
-            EXPERIENCE // 03
+          <span className="font-mono text-accent text-[10px] tracking-widest uppercase block">
+            Experience / 04
           </span>
-          <h2 className="font-serif font-bold text-4xl md:text-5xl mt-2">
-            Where I&apos;ve Been
+          <h2 className="font-display font-light text-4xl md:text-5xl mt-2">
+            Journey & Shippings
           </h2>
         </motion.div>
 
         {/* Timeline Structure */}
-        <div className="relative border-l-2 border-retro-dark pl-6 md:pl-10 ml-2 md:ml-6 space-y-12">
+        <div className="relative border-l border-border pl-6 md:pl-10 ml-2 md:ml-6 space-y-10">
           {timelineData.map((item, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -30 }}
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: shouldReduceMotion ? 0 : idx * 0.05 }}
+              transition={{ duration: 0.6, delay: idx * 0.05 }}
               className="relative group"
             >
-              {/* Timeline Diamond Star Indicator */}
-              <div className="absolute -left-[33px] md:-left-[49px] top-4 w-4 h-4 bg-retro-orange border-2 border-retro-dark rotate-45 flex items-center justify-center shadow-[1px_1px_0px_#111111] group-hover:scale-125 transition-transform" />
+              {/* Timeline Indicator Dot */}
+              <div className="absolute -left-[31px] md:-left-[45px] top-4 w-2.5 h-2.5 bg-accent rounded-full transition-transform group-hover:scale-125" />
 
-              {/* Dynamic Card Container */}
-              <motion.div
-                whileHover={shouldReduceMotion ? {} : { x: 8 }}
-                className={`border-2 border-retro-dark p-6 rounded-2xl transition-all duration-300 relative overflow-hidden group ${
-                  item.isLatest
-                    ? "bg-retro-orange text-retro-dark shadow-[6px_6px_0px_#111111]"
-                    : "bg-retro-cream hover:bg-retro-olive/10 shadow-[4px_4px_0px_#111111] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
-                }`}
-              >
+              {/* Minimalist Card Container */}
+              <div className="border border-border bg-bg-base/20 p-6 transition-colors duration-300 hover:border-border-hover">
                 <div className="flex flex-wrap items-center justify-between gap-4 mb-3">
-                  <div className="flex items-center gap-2">
-                    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-retro-dark/20 text-[10px] font-mono font-bold select-none ${
-                      item.isLatest ? "bg-retro-dark text-retro-cream" : "bg-retro-dark/5 text-retro-olive"
-                    }`}>
-                      <Calendar size={10} /> {item.date}
-                    </span>
-                    {item.isLatest && (
-                      <span className="inline-flex items-center gap-1 text-[9px] font-mono text-retro-dark font-extrabold uppercase tracking-wider animate-pulse">
-                        <Sparkles size={8} /> Latest Hack
-                      </span>
-                    )}
-                  </div>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-border bg-bg-surface text-text-muted font-mono text-[9px]">
+                    <Calendar size={10} /> {item.date}
+                  </span>
 
-                  <span className={`inline-flex items-center gap-1 text-[10px] font-mono ${
-                    item.isLatest ? "text-retro-dark/85" : "text-retro-olive"
-                  }`}>
+                  <span className="inline-flex items-center gap-1 font-mono text-[9px] text-text-faint uppercase tracking-wider">
                     <MapPin size={10} /> {item.location}
                   </span>
                 </div>
 
-                <h3 className={`text-lg md:text-xl font-serif font-bold ${
-                  item.isLatest ? "text-retro-dark" : "text-retro-dark group-hover:text-retro-orange transition-colors"
-                }`}>
+                <h3 className="text-lg font-display font-medium text-text-primary group-hover:text-accent transition-colors">
                   {item.title}
                 </h3>
                 
-                <p className={`text-sm mt-2 leading-relaxed font-sans font-medium ${
-                  item.isLatest ? "text-retro-dark/85" : "text-retro-dark/75"
-                }`}>
+                <p className="text-xs text-text-muted mt-2 font-sans font-light leading-relaxed">
                   {item.subtitle}
                 </p>
-              </motion.div>
+              </div>
             </motion.div>
           ))}
         </div>

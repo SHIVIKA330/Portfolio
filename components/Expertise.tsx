@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const skillsData = [
   {
@@ -9,7 +9,7 @@ const skillsData = [
   },
   {
     category: "FRONTEND",
-    skills: ["Next.js 14", "React", "Tailwind CSS", "Framer Motion", "HTML/CSS"],
+    skills: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "HTML/CSS"],
   },
   {
     category: "BACKEND",
@@ -29,19 +29,17 @@ const skillsData = [
   },
   {
     category: "INTEGRATIONS",
-    skills: ["Razorpay", "UPI", "WhatsApp Cloud API", "Open-Meteo", "Workday EIB"],
+    skills: ["Razorpay", "UPI", "WhatsApp API", "Open-Meteo", "Workday EIB"],
   },
 ];
 
 export default function Expertise() {
-  const shouldReduceMotion = useReducedMotion();
-
   const sectionVariants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 40 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" as const },
+      transition: { duration: 0.8, ease: "easeOut" },
     },
   };
 
@@ -49,26 +47,23 @@ export default function Expertise() {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: shouldReduceMotion ? 0 : 0.05,
+        staggerChildren: 0.03,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" as const },
+      transition: { duration: 0.5, ease: "easeOut" },
     },
   };
 
   return (
-    <section id="expertise" className="bg-retro-cream text-retro-dark py-24 px-6 md:px-12 border-t-2 border-retro-dark relative overflow-hidden">
-      {/* Background Dots */}
-      <div className="absolute inset-0 bg-dots opacity-[0.04] pointer-events-none" />
-
-      <div className="max-w-6xl mx-auto relative z-10">
+    <section id="expertise" className="bg-bg-surface text-text-primary py-24 px-6 md:px-12 border-t border-border relative overflow-hidden">
+      <div className="max-w-5xl mx-auto relative z-10">
         {/* Heading */}
         <motion.div
           initial="hidden"
@@ -77,11 +72,11 @@ export default function Expertise() {
           variants={sectionVariants}
           className="mb-16"
         >
-          <span className="font-mono text-retro-olive text-xs tracking-[0.2em] font-semibold">
-            ABILITIES // 06
+          <span className="font-mono text-accent text-[10px] tracking-widest uppercase block">
+            Skills / 06
           </span>
-          <h2 className="font-serif font-bold text-4xl mt-2">
-            What I Work With
+          <h2 className="font-display font-light text-4xl mt-2">
+            Technical Toolkit
           </h2>
         </motion.div>
 
@@ -91,22 +86,22 @@ export default function Expertise() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {skillsData.map((group, idx) => (
             <motion.div
               key={idx}
               variants={itemVariants}
-              className="bg-retro-cream border-2 border-retro-dark p-6 rounded-2xl flex flex-col gap-4 shadow-[4px_4px_0px_#111111] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-300"
+              className="bg-bg-base/40 border border-border p-6 flex flex-col gap-4 hover:border-border-hover transition-colors"
             >
-              <span className="font-mono text-retro-olive text-xs tracking-[0.2em] font-bold">
+              <span className="font-mono text-accent text-[10px] tracking-widest font-semibold uppercase">
                 {group.category}
               </span>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5">
                 {group.skills.map((skill, sIdx) => (
                   <span
                     key={sIdx}
-                    className="bg-retro-dark text-retro-cream border border-retro-dark rounded-full px-3.5 py-1.5 text-xs font-mono hover:bg-retro-orange hover:text-retro-dark transition-all duration-200 cursor-default"
+                    className="bg-bg-surface text-text-muted border border-border rounded-full px-3 py-1 text-[11px] font-mono hover:text-text-primary hover:border-accent transition-colors cursor-default"
                   >
                     {skill}
                   </span>

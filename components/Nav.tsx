@@ -9,7 +9,7 @@ export default function Nav() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 80) {
+      if (window.scrollY > 50) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -31,17 +31,17 @@ export default function Nav() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "backdrop-blur-md bg-retro-dark/95 border-b border-retro-cream/10 py-4"
+          ? "backdrop-blur-md bg-bg-base/85 border-b border-border py-4"
           : "bg-transparent py-6"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
+      <div className="max-w-5xl mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
         <a
           href="#hero"
-          className="font-serif font-extrabold text-2xl text-retro-orange hover:text-retro-cream transition-colors tracking-tight"
+          className="font-display font-medium text-xl text-text-primary hover:text-accent transition-colors tracking-tight italic"
         >
-          SJ
+          S.J.
         </a>
 
         {/* Desktop Links */}
@@ -50,7 +50,7 @@ export default function Nav() {
             <a
               key={link.label}
               href={link.href}
-              className="text-sm font-mono text-retro-cream/70 hover:text-retro-orange transition-colors hover:underline hover:underline-offset-4 decoration-retro-orange/50"
+              className="text-[10px] font-mono tracking-widest text-text-muted hover:text-text-primary transition-colors uppercase"
             >
               {link.label}
             </a>
@@ -59,23 +59,23 @@ export default function Nav() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-retro-cream p-2 focus:outline-none focus:ring-2 focus:ring-retro-orange rounded"
+          className="md:hidden text-text-primary p-2 focus:outline-none"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
       {/* Mobile Drawer */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-retro-dark border-b border-retro-cream/10 px-6 py-6 shadow-xl flex flex-col space-y-4 animate-[slideDown_0.2s_ease-out]">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-bg-base/95 backdrop-blur-md border-b border-border px-6 py-6 flex flex-col space-y-4">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-base font-mono text-retro-cream/70 hover:text-retro-orange transition-colors py-2 border-b border-retro-cream/5 last:border-0"
+              className="text-xs font-mono tracking-widest text-text-muted hover:text-text-primary transition-colors py-2 border-b border-border/40 last:border-0 uppercase"
             >
               {link.label}
             </a>

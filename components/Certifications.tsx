@@ -1,11 +1,11 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const certData = [
   {
     icon: "🍃",
-    name: "MongoDB Associate Developer Certification",
+    name: "MongoDB Associate Developer",
     issuer: "MongoDB University",
     year: "2024",
     isGhost: false,
@@ -19,22 +19,20 @@ const certData = [
   },
   {
     icon: "✦",
-    name: "Coming Soon",
-    issuer: "Your next credential goes here",
+    name: "Upcoming",
+    issuer: "Next validation in progress",
     year: "—",
     isGhost: true,
   },
 ];
 
 export default function Certifications() {
-  const shouldReduceMotion = useReducedMotion();
-
   const sectionVariants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 40 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" as const },
+      transition: { duration: 0.8, ease: "easeOut" },
     },
   };
 
@@ -42,26 +40,23 @@ export default function Certifications() {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: shouldReduceMotion ? 0 : 0.08,
+        staggerChildren: 0.05,
       },
     },
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 25 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" as const },
+      transition: { duration: 0.5, ease: "easeOut" },
     },
   };
 
   return (
-    <section id="certifications" className="bg-retro-dark text-retro-cream py-24 px-6 md:px-12 border-t-2 border-retro-dark relative overflow-hidden">
-      {/* Background Dots */}
-      <div className="absolute inset-0 bg-dots opacity-[0.02] pointer-events-none" />
-
-      <div className="max-w-6xl mx-auto relative z-10">
+    <section id="certifications" className="bg-bg-base text-text-primary py-24 px-6 md:px-12 border-t border-border relative overflow-hidden">
+      <div className="max-w-5xl mx-auto relative z-10">
         {/* Heading */}
         <motion.div
           initial="hidden"
@@ -70,44 +65,39 @@ export default function Certifications() {
           variants={sectionVariants}
           className="mb-16"
         >
-          <span className="font-mono text-retro-orange text-xs tracking-[0.2em] font-semibold">
-            RECOGNITION // 07
+          <span className="font-mono text-accent text-[10px] tracking-widest uppercase block">
+            Recognition / 07
           </span>
-          <h2 className="font-serif font-bold text-4xl mt-2">
+          <h2 className="font-display font-light text-4xl mt-2">
             Credentials
           </h2>
         </motion.div>
 
-        {/* Grid: horizontal scroll on mobile, 3-col grid on desktop */}
+        {/* Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="flex overflow-x-auto md:grid md:grid-cols-3 gap-8 pb-6 md:pb-0 snap-x snap-mandatory scrollbar-none"
+          className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 pb-6 md:pb-0 snap-x snap-mandatory scrollbar-none"
         >
           {certData.map((cert, idx) => (
             <motion.div
               key={idx}
               variants={cardVariants}
-              whileHover={
-                shouldReduceMotion || cert.isGhost
-                  ? {}
-                  : { y: -4 }
-              }
-              className={`min-w-[280px] md:min-w-0 snap-center flex-1 flex flex-col justify-between p-6 rounded-2xl transition-all duration-300 ${
+              className={`min-w-[280px] md:min-w-0 snap-center flex-1 flex flex-col justify-between p-6 transition-colors duration-300 ${
                 cert.isGhost
-                  ? "border-2 border-dashed border-retro-cream/20 bg-transparent text-retro-cream/40"
-                  : "border-2 border-retro-cream/10 bg-retro-green shadow-[4px_4px_0px_#FFA31A] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
+                  ? "border border-dashed border-border bg-transparent text-text-muted/40"
+                  : "border border-border bg-bg-surface hover:border-border-hover"
               }`}
             >
               <div>
                 {/* Icon */}
                 <div
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center text-lg mb-6 ${
+                  className={`w-9 h-9 rounded flex items-center justify-center text-base mb-6 ${
                     cert.isGhost
-                      ? "bg-retro-cream/5 border border-retro-cream/10 text-retro-cream/40"
-                      : "bg-retro-dark border border-retro-cream/15 text-retro-cream"
+                      ? "bg-bg-surface border border-border text-text-muted/40"
+                      : "bg-bg-base border border-border text-text-primary"
                   }`}
                 >
                   {cert.icon}
@@ -115,19 +105,19 @@ export default function Certifications() {
 
                 {/* Title & Issuer */}
                 <h3
-                  className={`font-serif font-bold text-lg leading-snug ${
-                    cert.isGhost ? "text-retro-cream/40" : "text-retro-cream"
+                  className={`font-display font-medium text-lg leading-snug ${
+                    cert.isGhost ? "text-text-muted/40" : "text-text-primary"
                   }`}
                 >
                   {cert.name}
                 </h3>
-                <p className="text-xs font-mono text-retro-cream/60 mt-2 leading-relaxed">
+                <p className="text-xs font-mono text-text-muted mt-2 leading-relaxed">
                   {cert.issuer}
                 </p>
               </div>
 
               {/* Year */}
-              <div className="mt-8 pt-4 border-t border-retro-cream/10 flex justify-between items-center text-[10px] font-mono text-retro-cream/50">
+              <div className="mt-8 pt-4 border-t border-border/60 flex justify-between items-center text-[9px] font-mono text-text-muted">
                 <span>ISSUED</span>
                 <span>{cert.year}</span>
               </div>

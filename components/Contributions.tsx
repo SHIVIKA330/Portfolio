@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GitPullRequest, Award, Shield, Cpu, Code2 } from "lucide-react";
+import { GitPullRequest, Award, Shield, Cpu } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
 
 export default function Contributions() {
@@ -10,7 +10,7 @@ export default function Contributions() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.8, ease: "easeOut" as const },
     },
   };
 

@@ -23,7 +23,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-bg-base text-text-primary py-28 px-6 md:px-12 border-t border-border relative overflow-hidden">
+    <section id="contact" className="bg-bg-base/40 backdrop-blur-sm text-text-primary py-28 px-6 md:px-12 border-t border-border relative overflow-hidden">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -48,7 +48,7 @@ export default function Contact() {
         <div className="flex justify-center gap-4">
           <a
             href="mailto:shivikajain330@gmail.com"
-            className="flex items-center justify-center w-12 h-12 border border-border bg-bg-surface hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
+            className="flex items-center justify-center w-12 h-12 border border-border bg-bg-surface backdrop-blur-md hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
             aria-label="Email"
           >
             <Mail size={16} />
@@ -57,7 +57,7 @@ export default function Contact() {
             href="https://www.linkedin.com/in/shivikajain330/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-12 h-12 border border-border bg-bg-surface hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
+            className="flex items-center justify-center w-12 h-12 border border-border bg-bg-surface backdrop-blur-md hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
             aria-label="LinkedIn"
           >
             <LinkedinIcon size={16} />
@@ -66,7 +66,7 @@ export default function Contact() {
             href="https://github.com/SHIVIKA330"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-12 h-12 border border-border bg-bg-surface hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
+            className="flex items-center justify-center w-12 h-12 border border-border bg-bg-surface backdrop-blur-md hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
             aria-label="GitHub"
           >
             <GithubIcon size={16} />
@@ -77,7 +77,7 @@ export default function Contact() {
         <form
           action="https://formspree.io/f/mqkrbjge"
           method="POST"
-          className="w-full max-w-lg text-left space-y-6 mt-4 bg-bg-surface border border-border p-8 md:p-10"
+          className="w-full max-w-lg text-left space-y-6 mt-4 bg-bg-surface backdrop-blur-md border border-border p-8 md:p-10"
         >
           {/* Name Field */}
           <div className="relative flex flex-col pt-4">

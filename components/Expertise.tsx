@@ -62,7 +62,7 @@ export default function Expertise() {
   };
 
   return (
-    <section id="expertise" className="bg-bg-surface text-text-primary py-24 px-6 md:px-12 border-t border-border relative overflow-hidden">
+    <section id="expertise" className="bg-bg-surface backdrop-blur-sm text-text-primary py-24 px-6 md:px-12 border-t border-border relative overflow-hidden">
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Heading */}
         <motion.div
@@ -92,7 +92,7 @@ export default function Expertise() {
             <motion.div
               key={idx}
               variants={itemVariants}
-              className="bg-bg-base/40 border border-border p-6 flex flex-col gap-4 hover:border-border-hover transition-colors"
+              className="bg-bg-base/40 backdrop-blur-md border border-border p-6 flex flex-col gap-4 hover:border-border-hover transition-colors"
             >
               <span className="font-mono text-accent text-[10px] tracking-widest font-semibold uppercase">
                 {group.category}

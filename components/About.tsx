@@ -37,7 +37,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="bg-bg-surface text-text-primary py-28 px-6 md:px-12 border-t border-border relative overflow-hidden">
+    <section id="about" className="bg-bg-surface backdrop-blur-sm text-text-primary py-28 px-6 md:px-12 border-t border-border relative overflow-hidden">
       <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
           variants={sectionVariants}
@@ -88,7 +88,7 @@ export default function About() {
           {/* Right Column: Info Panel & Stats */}
           <div className="lg:col-span-5 space-y-10">
             {/* Minimalist Contact Card */}
-            <div className="border border-border bg-bg-base/40 p-6 md:p-8 space-y-6">
+            <div className="border border-border bg-bg-base/40 backdrop-blur-md p-6 md:p-8 space-y-6">
               <div>
                 <h3 className="font-display font-medium text-lg text-text-primary">Contact Details</h3>
                 <span className="font-mono text-[9px] text-text-muted uppercase tracking-widest block mt-1">Direct inquiries</span>
@@ -141,7 +141,7 @@ export default function About() {
             {/* Stats Row */}
             <div className="grid grid-cols-2 gap-4">
               {stats.map((stat, idx) => (
-                <div key={idx} className="border border-border p-4 bg-bg-base/20">
+                <div key={idx} className="border border-border p-4 bg-bg-base/20 backdrop-blur-md">
                   <span className="font-display font-light text-3xl text-text-primary block">
                     {stat.value}
                   </span>
@@ -177,7 +177,7 @@ export default function About() {
                 {/* Minimalist Dot Indicator */}
                 <div className="absolute -left-[31px] md:-left-[45px] top-2 w-2 h-2 bg-accent rounded-full transition-transform group-hover:scale-125" />
                 
-                <div className="border border-border/60 hover:border-border p-6 bg-bg-base/10 transition-colors">
+                <div className="border border-border/60 hover:border-border p-6 bg-bg-base/10 backdrop-blur-md transition-colors">
                   <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
                     <span className="inline-flex items-center px-2.5 py-0.5 rounded-full border border-border bg-bg-surface text-text-muted font-mono text-[9px]">
                       {item.period}

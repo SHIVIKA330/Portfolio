@@ -22,7 +22,7 @@ export default function Contributions() {
   ];
 
   return (
-    <section id="contributions" className="bg-bg-base text-text-primary py-24 px-6 md:px-12 border-t border-border relative overflow-hidden">
+    <section id="contributions" className="bg-bg-base/40 backdrop-blur-sm text-text-primary py-24 px-6 md:px-12 border-t border-border relative overflow-hidden">
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Heading */}
         <motion.div
@@ -47,7 +47,7 @@ export default function Contributions() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={sectionVariants}
-            className="relative bg-bg-surface border border-border p-6 md:p-8 transition-colors hover:border-border-hover"
+            className="relative bg-bg-surface backdrop-blur-md border border-border p-6 md:p-8 transition-colors hover:border-border-hover"
           >
             <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div className="space-y-4 max-w-2xl">
@@ -98,7 +98,7 @@ export default function Contributions() {
             className="grid grid-cols-2 md:grid-cols-4 gap-4"
           >
             {gitMetrics.map((metric, idx) => (
-              <div key={idx} className="bg-bg-surface border border-border p-5 text-center">
+              <div key={idx} className="bg-bg-surface backdrop-blur-md border border-border p-5 text-center">
                 <span className="font-display font-light text-2xl text-text-primary block">
                   {metric.value}
                 </span>
@@ -115,7 +115,7 @@ export default function Contributions() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={sectionVariants}
-            className="bg-bg-surface border border-border p-6 flex items-start gap-4 hover:border-border-hover transition-colors"
+            className="bg-bg-surface backdrop-blur-md border border-border p-6 flex items-start gap-4 hover:border-border-hover transition-colors"
           >
             <div className="p-2.5 bg-bg-base border border-border text-accent shrink-0">
               <Award size={16} />

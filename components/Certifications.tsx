@@ -55,7 +55,7 @@ export default function Certifications() {
   };
 
   return (
-    <section id="certifications" className="bg-bg-base text-text-primary py-24 px-6 md:px-12 border-t border-border relative overflow-hidden">
+    <section id="certifications" className="bg-bg-base/40 backdrop-blur-sm text-text-primary py-24 px-6 md:px-12 border-t border-border relative overflow-hidden">
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Heading */}
         <motion.div
@@ -87,8 +87,8 @@ export default function Certifications() {
               variants={cardVariants}
               className={`min-w-[280px] md:min-w-0 snap-center flex-1 flex flex-col justify-between p-6 transition-colors duration-300 ${
                 cert.isGhost
-                  ? "border border-dashed border-border bg-transparent text-text-muted/40"
-                  : "border border-border bg-bg-surface hover:border-border-hover"
+                  ? "border border-dashed border-border bg-bg-surface/20 backdrop-blur-md text-text-muted/40"
+                  : "border border-border bg-bg-surface backdrop-blur-md hover:border-border-hover"
               }`}
             >
               <div>

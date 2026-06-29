@@ -14,7 +14,7 @@ export default function Resume() {
   };
 
   return (
-    <section id="resume" className="relative bg-bg-surface text-text-primary py-24 overflow-hidden border-t border-border">
+    <section id="resume" className="relative bg-bg-surface backdrop-blur-sm text-text-primary py-24 overflow-hidden border-t border-border">
       <motion.div
         initial="hidden"
         whileInView="visible"

@@ -24,7 +24,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="bg-bg-base text-text-primary py-28 px-6 md:px-12 border-t border-border relative overflow-hidden">
+    <section id="projects" className="bg-bg-base/40 backdrop-blur-sm text-text-primary py-28 px-6 md:px-12 border-t border-border relative overflow-hidden">
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
@@ -53,7 +53,7 @@ export default function Projects() {
           {/* CARD 1: OFFSHIFT - FEATURED CARD (Spans 2 cols) */}
           <motion.div
             variants={cardVariants}
-            className="md:col-span-2 bg-bg-surface border border-border hover:border-border-hover p-6 md:p-8 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
+            className="md:col-span-2 bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 md:p-8 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
           >
             <div className="space-y-4">
               <div className="flex flex-wrap items-center gap-3">
@@ -104,7 +104,7 @@ export default function Projects() {
           {/* CARD 2: PHISHING DETECTOR */}
           <motion.div
             variants={cardVariants}
-            className="bg-bg-surface border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
+            className="bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
           >
             <div className="space-y-4">
               <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest block">Extension / 02</span>
@@ -144,7 +144,7 @@ export default function Projects() {
           {/* CARD 3: ARTHA */}
           <motion.div
             variants={cardVariants}
-            className="bg-bg-surface border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
+            className="bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
           >
             <div className="space-y-4">
               <div className="flex justify-between items-center">
@@ -177,7 +177,7 @@ export default function Projects() {
           {/* CARD 4: BHARATLEDGER */}
           <motion.div
             variants={cardVariants}
-            className="bg-bg-surface border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
+            className="bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
           >
             <div className="space-y-4">
               <div className="flex justify-between items-center">
@@ -210,7 +210,7 @@ export default function Projects() {
           {/* CARD 5: CAREERSEED */}
           <motion.div
             variants={cardVariants}
-            className="bg-bg-surface border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
+            className="bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
           >
             <div className="space-y-4">
               <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest block">Full-Stack / 05</span>
@@ -248,7 +248,7 @@ export default function Projects() {
           {/* CARD 6: LOGISTICS BOT */}
           <motion.div
             variants={cardVariants}
-            className="bg-bg-surface border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
+            className="bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
           >
             <div className="space-y-4">
               <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest block">Integrations / 06</span>
@@ -286,7 +286,7 @@ export default function Projects() {
           {/* CARD 7: AI HAND GESTURE */}
           <motion.div
             variants={cardVariants}
-            className="bg-bg-surface border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
+            className="bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
           >
             <div className="space-y-4">
               <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest block">Computer Vision / 07</span>
@@ -324,7 +324,7 @@ export default function Projects() {
           {/* CARD 8: HR SYNTH PIPELINE */}
           <motion.div
             variants={cardVariants}
-            className="bg-bg-surface border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
+            className="bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
           >
             <div className="space-y-4">
               <div className="flex justify-between items-center">

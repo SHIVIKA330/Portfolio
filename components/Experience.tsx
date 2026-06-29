@@ -59,7 +59,7 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="bg-bg-surface text-text-primary py-28 px-6 md:px-12 border-t border-border relative overflow-hidden">
+    <section id="experience" className="bg-bg-surface backdrop-blur-sm text-text-primary py-28 px-6 md:px-12 border-t border-border relative overflow-hidden">
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Heading */}
         <motion.div
@@ -92,7 +92,7 @@ export default function Experience() {
               <div className="absolute -left-[31px] md:-left-[45px] top-4 w-2.5 h-2.5 bg-accent rounded-full transition-transform group-hover:scale-125" />
 
               {/* Minimalist Card Container */}
-              <div className="border border-border bg-bg-base/20 p-6 transition-colors duration-300 hover:border-border-hover">
+              <div className="border border-border bg-bg-base/20 backdrop-blur-md p-6 transition-colors duration-300 hover:border-border-hover">
                 <div className="flex flex-wrap items-center justify-between gap-4 mb-3">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-border bg-bg-surface text-text-muted font-mono text-[9px]">
                     <Calendar size={10} /> {item.date}

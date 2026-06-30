@@ -26,12 +26,12 @@ export default function About() {
       degree: "B.Tech in Computer Science & Engineering",
       institution: "GLA University, Mathura",
       period: "2023 - 2027",
-      details: "Focusing on data structures, algorithms, and full-stack systems. Active in university hackathons.",
+      details: "Focusing on data structures, algorithms, and full-stack systems. Active in hackathons.",
     },
     {
-      degree: "Java Industrial Training",
+      degree: "FullStack Development in JAVA",
       institution: "KVCH via GLA University",
-      period: "Summer 2024",
+      period: "Summer 2025",
       details: "Hands-on implementation of enterprise Java runtimes, MVC architecture, and database schemas.",
     },
   ];
@@ -111,7 +111,7 @@ export default function About() {
 
               <div className="flex items-center gap-3 pt-4 border-t border-border">
                 <a
-                  href="mailto:shivikajain330@gmail.com"
+                  href="mailto:shivikaj47@gmail.com"
                   className="p-2 border border-border hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
                   aria-label="Email"
                 >

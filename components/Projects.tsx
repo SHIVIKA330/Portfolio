@@ -211,6 +211,7 @@ export default function Projects() {
               </a>
             </div>
           </motion.div>
+        </motion.div>
       </div>
     </section>
   );

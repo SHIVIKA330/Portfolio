@@ -152,7 +152,7 @@ export default function Projects() {
                 <span className="text-[9px] font-mono text-accent uppercase tracking-widest font-semibold border border-accent/20 px-2 py-0.2 bg-accent/5">ET Hack &apos;26</span>
               </div>
               <h3 className="font-display font-medium text-xl text-text-primary">
-                Artha — Financial Twin AI
+                ET-Concierge — Financial Twin AI
               </h3>
               <p className="text-xs font-mono text-accent">Emotion-aware financial twin concierge</p>
               <p className="text-xs text-text-muted leading-relaxed font-sans font-light">
@@ -170,39 +170,6 @@ export default function Projects() {
 
             <div className="flex justify-between items-center mt-6 pt-4 border-t border-border/60 text-[10px] font-mono text-text-muted">
               <span>NVIDIA & Llama 70B</span>
-              <span className="text-accent uppercase tracking-wider font-semibold">Hackathon</span>
-            </div>
-          </motion.div>
-
-          {/* CARD 4: BHARATLEDGER */}
-          <motion.div
-            variants={cardVariants}
-            className="bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
-          >
-            <div className="space-y-4">
-              <div className="flex justify-between items-center">
-                <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest">Fintech / 04</span>
-                <span className="text-[9px] font-mono text-accent uppercase tracking-widest font-semibold border border-accent/20 px-2 py-0.2 bg-accent/5">Cognizant &apos;26</span>
-              </div>
-              <h3 className="font-display font-medium text-xl text-text-primary">
-                BharatLedger
-              </h3>
-              <p className="text-xs font-mono text-accent">Credit & banking for informal workers</p>
-              <p className="text-xs text-text-muted leading-relaxed font-sans font-light">
-                Fintech portal targeted at India&apos;s 450M+ informal sector workers, providing micro-lending metrics, credit history mapping, and digital banking access.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-1.5 pt-4">
-              {["Next.js", "Supabase", "Tailwind"].map((tech) => (
-                <span key={tech} className="text-[9px] font-mono text-text-muted bg-bg-base border border-border px-2 py-0.5">
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex justify-between items-center mt-6 pt-4 border-t border-border/60 text-[10px] font-mono text-text-muted">
-              <span>Next.js & Supabase</span>
               <span className="text-accent uppercase tracking-wider font-semibold">Hackathon</span>
             </div>
           </motion.div>
@@ -244,116 +211,6 @@ export default function Projects() {
               </a>
             </div>
           </motion.div>
-
-          {/* CARD 6: LOGISTICS BOT */}
-          <motion.div
-            variants={cardVariants}
-            className="bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
-          >
-            <div className="space-y-4">
-              <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest block">Integrations / 06</span>
-              <h3 className="font-display font-medium text-xl text-text-primary">
-                Logistics Bot
-              </h3>
-              <p className="text-xs font-mono text-accent">Technician dispatch update bot</p>
-              <p className="text-xs text-text-muted leading-relaxed font-sans font-light">
-                Built for Jain Kante Wale. Features an operator dispatch board that updates tracking statuses and triggers automated client notifications via WhatsApp Cloud API.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-1.5 pt-4">
-              {["JavaScript", "WhatsApp API", "Node.js"].map((tech) => (
-                <span key={tech} className="text-[9px] font-mono text-text-muted bg-bg-base border border-border px-2 py-0.5">
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex justify-between items-center mt-6 pt-4 border-t border-border/60">
-              <span className="text-[10px] font-mono text-text-muted">Node & WhatsApp API</span>
-              <a
-                href="https://github.com/SHIVIKA330/whatsapp-logistics-bot"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 border border-border hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
-                aria-label="GitHub Repository"
-              >
-                <GithubIcon size={14} />
-              </a>
-            </div>
-          </motion.div>
-
-          {/* CARD 7: AI HAND GESTURE */}
-          <motion.div
-            variants={cardVariants}
-            className="bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
-          >
-            <div className="space-y-4">
-              <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest block">Computer Vision / 07</span>
-              <h3 className="font-display font-medium text-xl text-text-primary">
-                AI Hand Gesture
-              </h3>
-              <p className="text-xs font-mono text-accent">Real-time classification pipeline</p>
-              <p className="text-xs text-text-muted leading-relaxed font-sans font-light">
-                Classifies manual hand configurations and sweeps in real-time. Employs a custom OpenCV input image preprocessing pipeline and feature extraction metrics.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-1.5 pt-4">
-              {["Python", "OpenCV", "NumPy"].map((tech) => (
-                <span key={tech} className="text-[9px] font-mono text-text-muted bg-bg-base border border-border px-2 py-0.5">
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex justify-between items-center mt-6 pt-4 border-t border-border/60">
-              <span className="text-[10px] font-mono text-text-muted">OpenCV & Preprocessing</span>
-              <a
-                href="https://github.com/SHIVIKA330/AI-hand-gesture"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 border border-border hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
-                aria-label="GitHub Repository"
-              >
-                <GithubIcon size={14} />
-              </a>
-            </div>
-          </motion.div>
-
-          {/* CARD 8: HR SYNTH PIPELINE */}
-          <motion.div
-            variants={cardVariants}
-            className="bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
-          >
-            <div className="space-y-4">
-              <div className="flex justify-between items-center">
-                <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest">DevOps / QA / 08</span>
-                <span className="text-[9px] font-mono text-accent uppercase tracking-widest font-semibold border border-accent/20 px-2 py-0.2 bg-accent/5">INTEGRTR &apos;26</span>
-              </div>
-              <h3 className="font-display font-medium text-xl text-text-primary">
-                HR Synth Data Pipeline
-              </h3>
-              <p className="text-xs font-mono text-accent">Faker candidate generator & Workday loader</p>
-              <p className="text-xs text-text-muted leading-relaxed font-sans font-light">
-                TypeScript monorepo built for the INTEGRTR hackathon. Automatically synthesizes mock candidate profiles, runs schema validations, and loads records to Workday EIBs.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-1.5 pt-4">
-              {["TypeScript", "Playwright", "Workday EIB"].map((tech) => (
-                <span key={tech} className="text-[9px] font-mono text-text-muted bg-bg-base border border-border px-2 py-0.5">
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex justify-between items-center mt-6 pt-4 border-t border-border/60 text-[10px] font-mono text-text-muted">
-              <span>TypeScript Monorepo</span>
-              <span className="text-accent uppercase tracking-wider font-semibold">Hackathon</span>
-            </div>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );

@@ -6,12 +6,6 @@ import { Calendar, MapPin } from "lucide-react";
 const timelineData = [
   {
     date: "2026",
-    title: "INTEGRTR × GLA Hackathon · Team 08",
-    subtitle: "HR Synth Data Pipeline — TypeScript monorepo, 48hr sprint",
-    location: "GLA University",
-  },
-  {
-    date: "2026",
     title: "DEVTrails × Guidewire Hackathon · Team TechnoTribe",
     subtitle: "OffShift — Parametric insurance, shipped in 24hr",
     location: "DEVTrails Hub",
@@ -19,20 +13,15 @@ const timelineData = [
   {
     date: "2026",
     title: "ET AI Hackathon 2026",
-    subtitle: "Artha (ET Concierge) — NVIDIA Llama 3.1 70B",
+    subtitle: "ET Concierge — NVIDIA Llama 3.1 70B",
     location: "ET Online",
   },
+  
   {
     date: "2026",
-    title: "Cognizant Technoverse Hackathon",
-    subtitle: "BharatLedger — Fintech for informal workers",
-    location: "Cognizant Hub",
-  },
-  {
-    date: "2025",
-    title: "GSSoC Ambassador (Campus Liaison)",
-    subtitle: "GirlScript Summer of Code · GLA University campus",
-    location: "Remote / Campus",
+    title: "Quint Beauty",
+    subtitle: "CORE ELEGANCE",
+    location: "Remote",
   },
   {
     date: "2024",

@@ -9,15 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'bg-base':     '#E2ECF5',
-        'bg-surface':  'rgba(255, 255, 255, 0.45)',
-        'bg-elevated': 'rgba(255, 255, 255, 0.65)',
-        'accent':      '#4A607A',
-        'text-primary': '#1A2938',
-        'text-muted':  '#506175',
-        'text-faint':  '#7A8C9E',
-        'border':      'rgba(255, 255, 255, 0.45)',
-        'border-hover':'rgba(255, 255, 255, 0.8)',
+        'bg-base':     '#F7F4D5',
+        'bg-surface':  'rgba(255, 255, 255, 0.55)',
+        'bg-elevated': 'rgba(255, 255, 255, 0.85)',
+        'accent':      '#D3968C',
+        'text-primary': '#0A3323',
+        'text-muted':  '#105666',
+        'text-faint':  '#839958',
+        'border':      'rgba(10, 51, 35, 0.1)',
+        'border-hover':'rgba(10, 51, 35, 0.2)',
       },
       fontFamily: {
         sans:    ['var(--font-inter)', 'system-ui', 'sans-serif'],

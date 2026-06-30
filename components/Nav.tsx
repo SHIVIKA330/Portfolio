@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 
 export default function Nav() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,8 +17,32 @@ export default function Nav() {
       }
     };
     window.addEventListener("scroll", handleScroll);
+
+    // Initial theme check
+    const storedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
+      setIsDarkMode(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      setIsDarkMode(false);
+      document.documentElement.classList.remove("dark");
+    }
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const toggleTheme = () => {
+    if (isDarkMode) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setIsDarkMode(false);
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setIsDarkMode(true);
+    }
+  };
 
   const navLinks = [
     { label: "About", href: "#about" },
@@ -44,7 +69,7 @@ export default function Nav() {
           S.J.
         </a>
 
-        {/* Desktop Links */}
+        {/* Desktop Links & Theme Toggle */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <a
@@ -55,16 +80,34 @@ export default function Nav() {
               {link.label}
             </a>
           ))}
+          
+          <button
+            onClick={toggleTheme}
+            className="text-text-muted hover:text-text-primary transition-colors p-1.5 focus:outline-none"
+            aria-label="Toggle dark mode"
+          >
+            {isDarkMode ? <Sun size={14} /> : <Moon size={14} />}
+          </button>
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-text-primary p-2 focus:outline-none"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        {/* Mobile Actions Container */}
+        <div className="flex md:hidden items-center gap-3">
+          <button
+            onClick={toggleTheme}
+            className="text-text-primary p-2 focus:outline-none"
+            aria-label="Toggle dark mode"
+          >
+            {isDarkMode ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
+          
+          <button
+            className="text-text-primary p-2 focus:outline-none"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}

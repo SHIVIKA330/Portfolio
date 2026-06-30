@@ -2,21 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-base: #F7F4D5;
+  --bg-surface: rgba(255, 255, 255, 0.55);
+  --bg-elevated: rgba(255, 255, 255, 0.85);
+  --accent: #D3968C;
+  --text-primary: #0A3323;
+  --text-muted: #105666;
+  --text-faint: #839958;
+  --border: rgba(10, 51, 35, 0.1);
+  --border-hover: rgba(10, 51, 35, 0.2);
+}
+
+.dark {
+  --bg-base: #061B13;
+  --bg-surface: rgba(10, 51, 35, 0.45);
+  --bg-elevated: rgba(16, 86, 102, 0.2);
+  --accent: #D3968C;
+  --text-primary: #F7F4D5;
+  --text-muted: #839958;
+  --text-faint: #105666;
+  --border: rgba(247, 244, 213, 0.1);
+  --border-hover: rgba(247, 244, 213, 0.25);
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
 }
 
 body {
-  color: #0A3323;
-  background: linear-gradient(180deg, #F7F4D5 0%, #FAFAF0 50%, #FFFFFF 100%);
+  color: var(--text-primary);
+  background: linear-gradient(180deg, var(--bg-base) 0%, #FAFAF0 50%, #FFFFFF 100%);
+  background-attachment: fixed;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark body {
+  background: linear-gradient(180deg, var(--bg-base) 0%, #082117 50%, #030F0A 100%);
   background-attachment: fixed;
 }
 
-/* Selection matching Rosy Brown */
+/* Selection matching theme accent */
 ::selection {
   background: rgba(211, 150, 140, 0.3);
-  color: #0A3323;
+  color: var(--text-primary);
 }
 
 /* Scrollbar */
@@ -25,12 +55,16 @@ body {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F7F4D5;
+  background: var(--bg-base);
+  transition: background-color 0.3s ease;
 }
 ::-webkit-scrollbar-thumb {
   background: #839958;
   border-radius: 3px;
 }
+.dark ::-webkit-scrollbar-thumb {
+  background: #D3968C;
+}
 ::-webkit-scrollbar-thumb:hover {
-  background: #0A3323;
+  background: var(--text-primary);
 }

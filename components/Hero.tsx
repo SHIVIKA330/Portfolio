@@ -46,7 +46,7 @@ export default function Hero() {
             variants={itemVariants}
             className="font-display font-light text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight max-w-4xl"
           >
-            Engineering <span className="italic font-normal">digital systems</span>, APIs, and AI integrations.
+            Engineering <span className="italic font-light">digital systems</span>, APIs, and <span className="italic font-light">AI integrations</span>.
           </motion.h1>
 
           {/* Tagline Paragraph */}

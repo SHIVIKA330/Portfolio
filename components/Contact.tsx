@@ -37,7 +37,7 @@ export default function Contact() {
             Contact / 09
           </span>
           <h2 className="font-display font-light text-4xl md:text-5xl text-text-primary">
-            Let&apos;s build something.
+            Let&apos;s <span className="italic font-light">build</span> something.
           </h2>
           <p className="text-text-muted text-xs md:text-sm max-w-md leading-relaxed mx-auto pt-2 font-sans font-light">
             Open to hackathons, collaborations, developer roles, and interesting problems.

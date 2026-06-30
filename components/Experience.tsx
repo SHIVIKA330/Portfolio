@@ -73,7 +73,7 @@ export default function Experience() {
             Experience / 04
           </span>
           <h2 className="font-display font-light text-4xl md:text-5xl mt-2">
-            Journey & Shippings
+            Journey & <span className="italic font-light">Shippings</span>
           </h2>
         </motion.div>
 

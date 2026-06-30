@@ -38,7 +38,7 @@ export default function Projects() {
             Portfolio / 03
           </span>
           <h2 className="font-display font-light text-4xl md:text-5xl mt-2">
-            Selected Works
+            Selected <span className="italic font-light">Works</span>
           </h2>
         </motion.div>
 

@@ -27,7 +27,7 @@ export default function Resume() {
             Curriculum Vitae / 08
           </span>
           <h2 className="font-display font-light text-4xl mt-2">
-            Resume
+            My <span className="italic font-light">Resume</span>
           </h2>
         </div>
 

@@ -53,7 +53,7 @@ export default function About() {
                 Biography / 01
               </span>
               <h2 className="font-display font-light text-4xl md:text-5xl leading-tight">
-                About Shivika
+                About <span className="italic font-light">Shivika</span>
               </h2>
             </div>
 
@@ -167,7 +167,7 @@ export default function About() {
               Timeline / 02
             </span>
             <h3 className="font-display font-light text-2xl md:text-3xl mt-2">
-              Academic Background
+              Academic <span className="italic font-light">Background</span>
             </h3>
           </div>
 

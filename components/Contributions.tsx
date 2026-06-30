@@ -36,7 +36,7 @@ export default function Contributions() {
             Open Source / 05
           </span>
           <h2 className="font-display font-light text-4xl mt-2">
-            Community & Contributions
+            Community & <span className="italic font-light">Contributions</span>
           </h2>
         </motion.div>
 

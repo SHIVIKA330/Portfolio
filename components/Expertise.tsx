@@ -76,7 +76,7 @@ export default function Expertise() {
             Skills / 06
           </span>
           <h2 className="font-display font-light text-4xl mt-2">
-            Technical Toolkit
+            Technical <span className="italic font-light">Toolkit</span>
           </h2>
         </motion.div>
 

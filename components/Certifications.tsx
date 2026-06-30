@@ -69,7 +69,7 @@ export default function Certifications() {
             Recognition / 07
           </span>
           <h2 className="font-display font-light text-4xl mt-2">
-            Credentials
+            Selected <span className="italic font-light">Credentials</span>
           </h2>
         </motion.div>
 

@@ -97,7 +97,7 @@ export default function About() {
               <div className="space-y-3 font-mono text-[11px] text-text-muted">
                 <div className="flex items-center gap-3">
                   <Mail size={12} className="text-accent" />
-                  <span>shivikajain330@gmail.com</span>
+                  <span>shivikaj47@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin size={12} className="text-accent" />

@@ -59,7 +59,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 220 }}
-            className="fixed inset-0 z-50 bg-bg-base/98 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-gradient-to-b from-bg-base via-[#FAF8F2] to-white dark:from-bg-base dark:via-[#1E2038] dark:to-[#151626] overflow-y-auto"
           >
             {/* Sticky Overlay Header */}
             <div className="sticky top-0 left-0 right-0 z-50 backdrop-blur-md bg-bg-base/80 border-b border-border py-4 px-6">

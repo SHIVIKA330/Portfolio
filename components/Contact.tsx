@@ -47,7 +47,7 @@ export default function Contact() {
         {/* Social Icons */}
         <div className="flex justify-center gap-4">
           <a
-            href="mailto:shivikajain330@gmail.com"
+            href="mailto:shivikaj47@gmail.com"
             className="flex items-center justify-center w-12 h-12 border border-border bg-bg-surface backdrop-blur-md hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
             aria-label="Email"
           >

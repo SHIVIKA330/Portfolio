@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, GitFork } from "lucide-react";
+import { Star, GitFork, ExternalLink } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
 
 export default function Projects() {
@@ -97,6 +97,15 @@ export default function Projects() {
                 >
                   <GithubIcon size={14} />
                 </a>
+                <a
+                  href="https://offshift-9iok.onrender.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 border border-border hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
+                  aria-label="Live Demo"
+                >
+                  <ExternalLink size={14} />
+                </a>
               </div>
             </div>
           </motion.div>
@@ -141,7 +150,7 @@ export default function Projects() {
             </div>
           </motion.div>
 
-          {/* CARD 3: ARTHA */}
+          {/* CARD 3: ET-CONCIERGE */}
           <motion.div
             variants={cardVariants}
             className="bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
@@ -168,9 +177,88 @@ export default function Projects() {
               ))}
             </div>
 
-            <div className="flex justify-between items-center mt-6 pt-4 border-t border-border/60 text-[10px] font-mono text-text-muted">
-              <span>NVIDIA & Llama 70B</span>
-              <span className="text-accent uppercase tracking-wider font-semibold">Hackathon</span>
+            <div className="flex justify-between items-center mt-6 pt-4 border-t border-border/60">
+              <span className="text-[10px] font-mono text-text-muted">NVIDIA & Llama 70B</span>
+              <div className="flex gap-2">
+                <a
+                  href="https://github.com/SHIVIKA330/ET-Concierge"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 border border-border hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
+                  aria-label="GitHub Repository"
+                >
+                  <GithubIcon size={14} />
+                </a>
+                <a
+                  href="https://et-concierge.onrender.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 border border-border hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
+                  aria-label="Live Demo"
+                >
+                  <ExternalLink size={14} />
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* CARD 4: QUINT BEAUTY - FEATURED CARD (Spans 2 cols) */}
+          <motion.div
+            variants={cardVariants}
+            className="md:col-span-2 bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 md:p-8 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
+          >
+            <div className="space-y-4">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="inline-block text-[9px] font-mono text-accent uppercase tracking-widest border border-accent/30 px-2.5 py-0.5 bg-accent/5">
+                  Featured Project
+                </span>
+                <span className="text-[10px] font-mono text-text-muted">Serverless E-Commerce &apos;26</span>
+              </div>
+              
+              <h3 className="font-display font-medium text-2xl md:text-3xl text-text-primary">
+                Quint Beauty
+              </h3>
+              <p className="text-xs font-mono text-accent">
+                Serverless E-Commerce Platform
+              </p>
+              <p className="text-sm text-text-muted leading-relaxed font-sans font-light">
+                Scripted a modular client-side shopping cart with localStorage persistence and built a contact form pathway backed by a custom PHP mailer. Backed by serverless Firestore data structures.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-1.5 pt-4">
+              {["Firebase", "Firestore", "JavaScript", "HTML/CSS", "PHP Mailer", "Git"].map((tech) => (
+                <span key={tech} className="text-[9px] font-mono text-text-muted bg-bg-base border border-border px-2 py-0.5">
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex justify-between items-center mt-6 pt-4 border-t border-border/60">
+              <div className="flex items-center gap-3 text-[11px] font-mono text-text-muted">
+                <span className="flex items-center gap-1"><Star size={11} className="text-accent" /> 2 stars</span>
+                <span className="flex items-center gap-1"><GitFork size={11} /> 1 fork</span>
+              </div>
+              <div className="flex gap-2">
+                <a
+                  href="https://github.com/SHIVIKA330/quintbeauty"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 border border-border hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
+                  aria-label="GitHub Repository"
+                >
+                  <GithubIcon size={14} />
+                </a>
+                <a
+                  href="https://quintbeauty.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 border border-border hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
+                  aria-label="Live Demo"
+                >
+                  <ExternalLink size={14} />
+                </a>
+              </div>
             </div>
           </motion.div>
 
@@ -200,15 +288,26 @@ export default function Projects() {
 
             <div className="flex justify-between items-center mt-6 pt-4 border-t border-border/60">
               <span className="text-[10px] font-mono text-text-muted">Python & Streamlit</span>
-              <a
-                href="https://github.com/SHIVIKA330/CareerSeed"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 border border-border hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
-                aria-label="GitHub Repository"
-              >
-                <GithubIcon size={14} />
-              </a>
+              <div className="flex gap-2">
+                <a
+                  href="https://github.com/SHIVIKA330/CareerSeed"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 border border-border hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
+                  aria-label="GitHub Repository"
+                >
+                  <GithubIcon size={14} />
+                </a>
+                <a
+                  href="https://careerseed.onrender.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 border border-border hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
+                  aria-label="Live Demo"
+                >
+                  <ExternalLink size={14} />
+                </a>
+              </div>
             </div>
           </motion.div>
         </motion.div>

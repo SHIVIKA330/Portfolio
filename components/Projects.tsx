@@ -147,6 +147,15 @@ export default function Projects() {
               >
                 <GithubIcon size={14} />
               </a>
+              <a
+                  href="https://demo-fishing.onrender.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 border border-border hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
+                  aria-label="Live Demo"
+                >
+                  <ExternalLink size={14} />
+                </a>
             </div>
           </motion.div>
 

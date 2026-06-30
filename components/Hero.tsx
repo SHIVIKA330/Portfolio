@@ -46,7 +46,7 @@ export default function Hero() {
             variants={itemVariants}
             className="font-display font-light text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight max-w-4xl"
           >
-            Engineering <span className="italic font-light">digital systems</span>, APIs, and <span className="italic font-light">AI integrations</span>.
+            Building <span className="italic font-light"> impact-driven tools</span> and <span className="italic font-light">AI integrations</span>.
           </motion.h1>
 
           {/* Tagline Paragraph */}
@@ -54,7 +54,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-text-muted text-base md:text-lg max-w-xl leading-relaxed font-sans"
           >
-            I build at the intersection of fintech, AI, and social impact. Currently a Computer Science student, hackathon shipper, and contributor to the TensorFlow core runtime.
+            I build at the intersection of AI, and social impact. Currently a Computer Science student, hackathon shipper, and contributor to the TensorFlow core runtime.
           </motion.p>
 
           {/* Action Links */}

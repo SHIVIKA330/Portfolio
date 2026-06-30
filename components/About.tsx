@@ -79,7 +79,7 @@ export default function About() {
               <div className="space-y-1">
                 <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest block">Core Focus</span>
                 <span className="text-text-primary text-xs font-medium flex items-center gap-1.5 mt-1">
-                  <BookOpen size={12} className="text-accent" /> Fintech · AI Vision · Social Impact
+                  <BookOpen size={12} className="text-accent" /> AI Vision · Social Impact
                 </span>
               </div>
             </div>

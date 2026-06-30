@@ -11,123 +11,89 @@ import Certifications from "@/components/Certifications";
 import Resume from "@/components/Resume";
 import Contact from "@/components/Contact";
 import { AnimatePresence, motion } from "framer-motion";
+import { X } from "lucide-react";
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<string>("about");
+  const [activeOverlay, setActiveOverlay] = useState<string | null>(null);
 
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace("#", "");
       if (["about", "projects", "experience", "expertise"].includes(hash)) {
-        setActiveTab(hash);
-        const container = document.getElementById("dynamic-content");
-        if (container) {
-          setTimeout(() => {
-            container.scrollIntoView({ behavior: "smooth" });
-          }, 100);
-        }
+        setActiveOverlay(hash);
+        document.body.style.overflow = "hidden";
+      } else {
+        setActiveOverlay(null);
+        document.body.style.overflow = "unset";
       }
     };
 
     window.addEventListener("hashchange", handleHashChange);
     handleHashChange();
 
-    return () => window.removeEventListener("hashchange", handleHashChange);
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+      document.body.style.overflow = "unset";
+    };
   }, []);
 
-  const tabs = [
-    { id: "about", label: "About" },
-    { id: "projects", label: "Projects" },
-    { id: "experience", label: "Experience" },
-    { id: "expertise", label: "Skills" },
-  ];
+  const closeOverlay = () => {
+    // Revert URL hash to close overlay
+    window.location.hash = "";
+  };
 
   return (
     <main className="min-h-screen">
       {/* Slide 1: Hero */}
       <Hero />
 
-      {/* Dynamic Content Panel Container */}
-      <div id="dynamic-content" className="w-full">
-        {/* Tab Selector */}
-        <div className="max-w-5xl mx-auto px-6 pt-16 pb-8 flex flex-wrap gap-4 md:gap-8 justify-center">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => {
-                window.location.hash = `#${tab.id}`;
-                setActiveTab(tab.id);
-              }}
-              className={`font-mono text-xs uppercase tracking-widest pb-2 border-b-2 transition-all duration-300 ${
-                activeTab === tab.id
-                  ? "border-accent text-text-primary font-semibold"
-                  : "border-transparent text-text-muted hover:text-text-primary"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Selected Viewport */}
-        <div className="relative w-full">
-          <AnimatePresence mode="wait">
-            {activeTab === "about" && (
-              <motion.div
-                key="about"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.4 }}
-              >
-                <About />
-              </motion.div>
-            )}
-
-            {activeTab === "projects" && (
-              <motion.div
-                key="projects"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.4 }}
-              >
-                <Projects />
-              </motion.div>
-            )}
-
-            {activeTab === "experience" && (
-              <motion.div
-                key="experience"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.4 }}
-              >
-                <Experience />
-              </motion.div>
-            )}
-
-            {activeTab === "expertise" && (
-              <motion.div
-                key="expertise"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.4 }}
-              >
-                <Expertise />
-                <Contributions />
-                <Certifications />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </div>
-
       {/* Slide 2 & 3: Resume & Contact (Statically scrolled at bottom) */}
       <Resume />
       <Contact />
+
+      {/* Fullscreen Overlay Panels */}
+      <AnimatePresence>
+        {activeOverlay && (
+          <motion.div
+            initial={{ opacity: 0, y: "100%" }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: "100%" }}
+            transition={{ type: "spring", damping: 30, stiffness: 220 }}
+            className="fixed inset-0 z-50 bg-bg-base/98 overflow-y-auto"
+          >
+            {/* Sticky Overlay Header */}
+            <div className="sticky top-0 left-0 right-0 z-50 backdrop-blur-md bg-bg-base/80 border-b border-border py-4 px-6">
+              <div className="max-w-5xl mx-auto flex justify-between items-center">
+                <span className="font-mono text-[10px] tracking-widest text-text-muted uppercase">
+                  {activeOverlay === "expertise" ? "Skills" : activeOverlay} / Detail View
+                </span>
+                
+                <button
+                  onClick={closeOverlay}
+                  className="font-mono text-[10px] text-text-muted hover:text-text-primary transition-colors flex items-center gap-1.5 uppercase tracking-widest px-3 py-1 border border-border hover:border-text-primary"
+                >
+                  <X size={11} />
+                  Close
+                </button>
+              </div>
+            </div>
+
+            {/* Overlay Content */}
+            <div className="w-full">
+              {activeOverlay === "about" && <About />}
+              {activeOverlay === "projects" && <Projects />}
+              {activeOverlay === "experience" && <Experience />}
+              {activeOverlay === "expertise" && (
+                <div className="space-y-0">
+                  <Expertise />
+                  <Contributions />
+                  <Certifications />
+                </div>
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }

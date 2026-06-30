@@ -3,27 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --bg-base: #F7F4D5;
-  --bg-surface: rgba(255, 255, 255, 0.55);
-  --bg-elevated: rgba(255, 255, 255, 0.85);
-  --accent: #D3968C;
-  --text-primary: #0A3323;
-  --text-muted: #105666;
-  --text-faint: #839958;
-  --border: rgba(10, 51, 35, 0.1);
-  --border-hover: rgba(10, 51, 35, 0.2);
+  --bg-base: #EEEBDA;
+  --bg-surface: rgba(255, 255, 255, 0.45);
+  --bg-elevated: rgba(255, 255, 255, 0.65);
+  --accent: #282B4A;
+  --text-primary: #282B4A;
+  --text-muted: #505580;
+  --text-faint: #777DA8;
+  --border: rgba(40, 43, 74, 0.1);
+  --border-hover: rgba(40, 43, 74, 0.2);
 }
 
 .dark {
-  --bg-base: #061B13;
-  --bg-surface: rgba(10, 51, 35, 0.45);
-  --bg-elevated: rgba(16, 86, 102, 0.2);
-  --accent: #D3968C;
-  --text-primary: #F7F4D5;
-  --text-muted: #839958;
-  --text-faint: #105666;
-  --border: rgba(247, 244, 213, 0.1);
-  --border-hover: rgba(247, 244, 213, 0.25);
+  --bg-base: #282B4A;
+  --bg-surface: rgba(23, 25, 43, 0.45);
+  --bg-elevated: rgba(255, 255, 255, 0.06);
+  --accent: #EEEBDA;
+  --text-primary: #EEEBDA;
+  --text-muted: #8E94C5;
+  --text-faint: #5D638F;
+  --border: rgba(238, 235, 218, 0.1);
+  --border-hover: rgba(238, 235, 218, 0.25);
 }
 
 html {
@@ -33,19 +33,24 @@ html {
 
 body {
   color: var(--text-primary);
-  background: linear-gradient(180deg, var(--bg-base) 0%, #FAFAF0 50%, #FFFFFF 100%);
+  background: linear-gradient(180deg, var(--bg-base) 0%, #FAF8F2 50%, #FFFFFF 100%);
   background-attachment: fixed;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .dark body {
-  background: linear-gradient(180deg, var(--bg-base) 0%, #082117 50%, #030F0A 100%);
+  background: linear-gradient(180deg, var(--bg-base) 0%, #1E2038 50%, #151626 100%);
   background-attachment: fixed;
 }
 
-/* Selection matching theme accent */
+/* Selection matching theme colors */
 ::selection {
-  background: rgba(211, 150, 140, 0.3);
+  background: rgba(40, 43, 74, 0.15);
+  color: var(--text-primary);
+}
+
+.dark ::selection {
+  background: rgba(238, 235, 218, 0.25);
   color: var(--text-primary);
 }
 
@@ -59,11 +64,11 @@ body {
   transition: background-color 0.3s ease;
 }
 ::-webkit-scrollbar-thumb {
-  background: #839958;
+  background: #505580;
   border-radius: 3px;
 }
 .dark ::-webkit-scrollbar-thumb {
-  background: #D3968C;
+  background: #EEEBDA;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-primary);

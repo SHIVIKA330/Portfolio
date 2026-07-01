@@ -46,7 +46,7 @@ export default function Hero() {
             variants={itemVariants}
             className="font-display font-light text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight max-w-4xl"
           >
-            Building things that work—from APIs to TensorFlow PRs.
+            Full-Stack Developer and AI Builder
           </motion.h1>
 
           {/* Tagline Paragraph */}
@@ -54,7 +54,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-text-muted text-base md:text-lg max-w-xl leading-relaxed font-sans"
           >
-            I&apos;m a computer science student at GLA University. Right now, I&apos;m focused on writing clean backend code, hacking on mobile/web projects with Next.js and Supabase, and trying to get more code merged into TensorFlow.
+            I&apos;m Shivika — a CS student at GLA University building full-stack applications, shipping at hackathons, and contributing to the TensorFlow core runtime.
           </motion.p>
 
           {/* Action Links */}

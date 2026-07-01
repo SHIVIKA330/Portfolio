@@ -138,16 +138,17 @@ export default function Projects() {
               <div className="text-[11px] font-mono text-text-muted flex items-center gap-1">
                 <Star size={11} className="text-accent" /> 1 star
               </div>
-              <a
-                href="https://github.com/SHIVIKA330/Phishing-Detector"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 border border-border hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
-                aria-label="GitHub Repository"
-              >
-                <GithubIcon size={14} />
-              </a>
-              <a
+              <div className="flex gap-2">
+                <a
+                  href="https://github.com/SHIVIKA330/Phishing-Detector"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 border border-border hover:border-text-primary text-text-muted hover:text-text-primary transition-colors"
+                  aria-label="GitHub Repository"
+                >
+                  <GithubIcon size={14} />
+                </a>
+                <a
                   href="https://demo-fishing.onrender.com/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -156,6 +157,7 @@ export default function Projects() {
                 >
                   <ExternalLink size={14} />
                 </a>
+              </div>
             </div>
           </motion.div>
 

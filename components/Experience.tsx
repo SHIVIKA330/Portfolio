@@ -20,7 +20,7 @@ const timelineData = [
   {
     date: "2026",
     title: "Quint Beauty",
-    subtitle: "CORE ELEGANCE",
+    subtitle: "Serverless e-commerce build, personal project",
     location: "Remote",
   },
   {
@@ -62,7 +62,7 @@ export default function Experience() {
             Experience
           </span>
           <h2 className="font-display font-light text-4xl md:text-5xl mt-2">
-            Journey & <span className="italic font-light">Shippings</span>
+            Journey & <span className="italic font-light">Milestones</span>
           </h2>
         </motion.div>
 

@@ -33,14 +33,13 @@ html {
 
 body {
   color: var(--text-primary);
-  background: linear-gradient(180deg, var(--bg-base) 0%, #FAF8F2 50%, #FFFFFF 100%);
-  background-attachment: fixed;
+  background-color: var(--bg-base);
+  line-height: 1.65;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .dark body {
-  background: linear-gradient(180deg, var(--bg-base) 0%, #1E2038 50%, #151626 100%);
-  background-attachment: fixed;
+  background-color: var(--bg-base);
 }
 
 /* Selection matching theme colors */

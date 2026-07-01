@@ -15,11 +15,11 @@ export default function Projects() {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 15 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" as const },
+      transition: { duration: 0.25, ease: "easeOut" as const },
     },
   };
 
@@ -31,11 +31,11 @@ export default function Projects() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.25 }}
           className="mb-16"
         >
           <span className="font-mono text-accent text-[10px] tracking-widest uppercase block">
-            Portfolio / 03
+            Selected Work
           </span>
           <h2 className="font-display font-light text-4xl md:text-5xl mt-2">
             Selected <span className="italic font-light">Works</span>
@@ -53,7 +53,7 @@ export default function Projects() {
           {/* CARD 1: OFFSHIFT - FEATURED CARD (Spans 2 cols) */}
           <motion.div
             variants={cardVariants}
-            className="md:col-span-2 bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 md:p-8 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
+            className="md:col-span-2 bg-bg-surface border border-border hover:border-border-hover p-6 md:p-8 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
           >
             <div className="space-y-4">
               <div className="flex flex-wrap items-center gap-3">
@@ -70,7 +70,7 @@ export default function Projects() {
                 Parametric income insurance for gig delivery workers
               </p>
               <p className="text-sm text-text-muted leading-relaxed font-sans font-light">
-                Auto-payouts triggered by food delivery app outages and extreme weather disruptions. Zero claims processing overhead: payouts are fired instantly using Razorpay UPI endpoints.
+                Gig workers lose money when apps crash or the weather gets dangerous. We built this during a 24-hour hackathon to pay them automatically using weather APIs and instant Razorpay transfers. I had to configure Supabase database triggers so that payments go out the second an outage is reported.
               </p>
             </div>
 
@@ -113,16 +113,16 @@ export default function Projects() {
           {/* CARD 2: PHISHING DETECTOR */}
           <motion.div
             variants={cardVariants}
-            className="bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
+            className="bg-bg-surface border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
           >
             <div className="space-y-4">
-              <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest block">Extension / 02</span>
+              <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest block">Chrome Extension</span>
               <h3 className="font-display font-medium text-xl text-text-primary">
                 Phishing Detector
               </h3>
               <p className="text-xs font-mono text-accent">Chrome Extension for real-time security</p>
               <p className="text-xs text-text-muted leading-relaxed font-sans font-light">
-                ML-powered URL and content classification engine running inside a Chrome extension popup context. Flags phishing threat payloads instantly as you browse.
+                A Chrome extension that stops you from opening malicious links. It uses a small, local machine learning model to read the page URL and domain details. I chose to bundle the model directly in the extension so it works offline and doesn&apos;t send user history to any external server.
               </p>
             </div>
 
@@ -162,11 +162,11 @@ export default function Projects() {
           {/* CARD 3: ET-CONCIERGE */}
           <motion.div
             variants={cardVariants}
-            className="bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
+            className="bg-bg-surface border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
           >
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest">AI Agent / 03</span>
+                <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest">AI Agent</span>
                 <span className="text-[9px] font-mono text-accent uppercase tracking-widest font-semibold border border-accent/20 px-2 py-0.2 bg-accent/5">ET Hack &apos;26</span>
               </div>
               <h3 className="font-display font-medium text-xl text-text-primary">
@@ -174,7 +174,7 @@ export default function Projects() {
               </h3>
               <p className="text-xs font-mono text-accent">Emotion-aware financial twin concierge</p>
               <p className="text-xs text-text-muted leading-relaxed font-sans font-light">
-                Built on NVIDIA Llama 3.1 70B. Features custom silence intelligence and emotion detection to dynamically adapt interaction timings to user vocal distress scores.
+                An AI financial assistant built for a hackathon. We noticed that voice bots often interrupt users when they pause to think. I implemented a voice activity detection system using Python that listens to the user&apos;s tone and silence duration before letting the Llama 3.1 model respond.
               </p>
             </div>
 
@@ -214,7 +214,7 @@ export default function Projects() {
           {/* CARD 4: QUINT BEAUTY - FEATURED CARD (Spans 2 cols) */}
           <motion.div
             variants={cardVariants}
-            className="md:col-span-2 bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 md:p-8 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
+            className="md:col-span-2 bg-bg-surface border border-border hover:border-border-hover p-6 md:p-8 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
           >
             <div className="space-y-4">
               <div className="flex flex-wrap items-center gap-3">
@@ -231,7 +231,7 @@ export default function Projects() {
                 Serverless E-Commerce Platform
               </p>
               <p className="text-sm text-text-muted leading-relaxed font-sans font-light">
-                Scripted a modular client-side shopping cart with localStorage persistence and built a contact form pathway backed by a custom PHP mailer. Backed by serverless Firestore data structures.
+                A web store template I built. I wanted to see if I could make it run entirely serverless. I used Firestore for the product inventory and managed the cart state completely in localStorage. It uses a PHP mailer backend to handle contact submissions without a heavy database.
               </p>
             </div>
 
@@ -274,16 +274,16 @@ export default function Projects() {
           {/* CARD 5: CAREERSEED */}
           <motion.div
             variants={cardVariants}
-            className="bg-bg-surface backdrop-blur-md border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
+            className="bg-bg-surface border border-border hover:border-border-hover p-6 flex flex-col justify-between transition-colors duration-300 min-h-[360px]"
           >
             <div className="space-y-4">
-              <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest block">Full-Stack / 05</span>
+              <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest block">Web Application</span>
               <h3 className="font-display font-medium text-xl text-text-primary">
                 CareerSeed
               </h3>
               <p className="text-xs font-mono text-accent">Resume builder & matching finder</p>
               <p className="text-xs text-text-muted leading-relaxed font-sans font-light">
-                One-stop platform designed for freshers and laid-off professionals. Facilitates layout formatting, schema checks, and exports optimized resume PDFs instantly.
+                A resume builder that generates clean PDFs. It helps college graduates format their text without breaking the page layout. I built it with Python and Streamlit so that users can fill out their details in a sidebar and watch the PDF update live.
               </p>
             </div>
 

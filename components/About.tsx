@@ -6,11 +6,11 @@ import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 
 export default function About() {
   const sectionVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" as const },
+      transition: { duration: 0.25, ease: "easeOut" as const },
     },
   };
 
@@ -26,13 +26,13 @@ export default function About() {
       degree: "B.Tech in Computer Science & Engineering",
       institution: "GLA University, Mathura",
       period: "2023 - 2027",
-      details: "Focusing on data structures, algorithms, and full-stack systems. Active in hackathons.",
+      details: "Studying core CS subjects like operating systems and database design, while building side projects and traveling for weekend hackathons.",
     },
     {
       degree: "FullStack Development in JAVA",
       institution: "KVCH via GLA University",
       period: "Summer 2025",
-      details: "Hands-on implementation of enterprise Java runtimes, MVC architecture, and database schemas.",
+      details: "A summer course where I learned Java MVC, database relationships in SQL, and built small backend projects.",
     },
   ];
 
@@ -50,7 +50,7 @@ export default function About() {
           <div className="lg:col-span-7 space-y-8">
             <div className="space-y-3">
               <span className="font-mono text-accent text-[10px] tracking-widest uppercase block">
-                Biography / 01
+                Biography
               </span>
               <h2 className="font-display font-light text-4xl md:text-5xl leading-tight">
                 About <span className="italic font-light">Shivika</span>
@@ -61,10 +61,10 @@ export default function About() {
 
             <div className="space-y-6 text-text-muted text-sm md:text-base leading-relaxed font-sans font-light">
               <p>
-                I am a Computer Science student at GLA University, Mathura. Rather than building static sites, I focus on shipping high-performance full-stack applications at hackathons and contributing patches to the TensorFlow core runtime.
+                I&apos;m currently in my third year of Computer Science at GLA University. I spend most of my free time at hackathons or looking at open-source codebases. I like building tools that actually solve day-to-day problems rather than just talking about them.
               </p>
               <p>
-                My design principles favor clean, structural layouts, robust APIs, and meaningful micro-interactions that bridge the gap between complex software backend engineering and high-fidelity interfaces.
+                I mostly work with TypeScript, Next.js, and Java, but I&apos;m comfortable jumping into C++ or Python when a project needs it. I care a lot about database layout, clear APIs, and keeping things fast.
               </p>
             </div>
 
@@ -79,7 +79,7 @@ export default function About() {
               <div className="space-y-1">
                 <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest block">Core Focus</span>
                 <span className="text-text-primary text-xs font-medium flex items-center gap-1.5 mt-1">
-                  <BookOpen size={12} className="text-accent" /> AI Vision · Social Impact
+                  <BookOpen size={12} className="text-accent" /> Backend Engineering & Web Tools
                 </span>
               </div>
             </div>
@@ -164,7 +164,7 @@ export default function About() {
         >
           <div className="mb-12">
             <span className="font-mono text-accent text-[10px] tracking-widest uppercase block">
-              Timeline / 02
+              Timeline
             </span>
             <h3 className="font-display font-light text-2xl md:text-3xl mt-2">
               Academic <span className="italic font-light">Background</span>
@@ -208,20 +208,20 @@ export default function About() {
         >
           <div className="space-y-1 text-center md:text-left">
             <span className="font-mono text-[9px] text-accent uppercase tracking-widest block font-medium">
-              Recognition / GitHub
+              Open Source
             </span>
             <span className="text-[11px] text-text-muted block font-sans">
-              Earned badge structures in open source contributions and pull requests.
+              I contributed to the TensorFlow codebase to fix a bug in the runtime ops.
             </span>
           </div>
           <div className="flex flex-wrap gap-4 justify-center">
             <div className="flex items-center gap-3 px-4 py-2 border border-border bg-bg-surface">
               <ShieldCheck size={14} className="text-accent" />
-              <span className="font-mono text-[10px] text-text-muted uppercase tracking-widest">PR Merges</span>
+              <span className="font-mono text-[10px] text-text-muted uppercase tracking-widest">TensorFlow Contributor</span>
             </div>
             <div className="flex items-center gap-3 px-4 py-2 border border-border bg-bg-surface">
               <Target size={14} className="text-accent" />
-              <span className="font-mono text-[10px] text-text-muted uppercase tracking-widest">YOLO Merges</span>
+              <span className="font-mono text-[10px] text-text-muted uppercase tracking-widest">Active on GitHub</span>
             </div>
           </div>
         </motion.div>

@@ -35,11 +35,11 @@ const skillsData = [
 
 export default function Expertise() {
   const sectionVariants = {
-    hidden: { opacity: 0, y: 15 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" as const },
+      transition: { duration: 0.25, ease: "easeOut" as const },
     },
   };
 
@@ -57,7 +57,7 @@ export default function Expertise() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" as const },
+      transition: { duration: 0.25, ease: "easeOut" as const },
     },
   };
 
@@ -73,7 +73,7 @@ export default function Expertise() {
           className="mb-16"
         >
           <span className="font-mono text-accent text-[10px] tracking-widest uppercase block">
-            Skills / 06
+            Skills
           </span>
           <h2 className="font-display font-light text-4xl mt-2">
             Technical <span className="italic font-light">Toolkit</span>
@@ -92,7 +92,7 @@ export default function Expertise() {
             <motion.div
               key={idx}
               variants={itemVariants}
-              className="bg-bg-base/40 backdrop-blur-md border border-border p-6 flex flex-col gap-4 hover:border-border-hover transition-colors"
+              className="bg-bg-surface border border-border p-6 flex flex-col gap-4 hover:border-border-hover transition-colors"
             >
               <span className="font-mono text-accent text-[10px] tracking-widest font-semibold uppercase">
                 {group.category}

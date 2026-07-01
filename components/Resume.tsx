@@ -5,16 +5,16 @@ import { Download, ArrowUpRight } from "lucide-react";
 
 export default function Resume() {
   const sectionVariants = {
-    hidden: { opacity: 0, y: 15 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" as const },
+      transition: { duration: 0.25, ease: "easeOut" as const },
     },
   };
 
   return (
-    <section id="resume" className="relative bg-bg-surface backdrop-blur-sm text-text-primary py-24 overflow-hidden border-t border-border">
+    <section id="resume" className="relative bg-bg-surface text-text-primary py-24 overflow-hidden border-t border-border">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -24,7 +24,7 @@ export default function Resume() {
       >
         <div>
           <span className="font-mono text-accent text-[10px] tracking-widest uppercase block">
-            Curriculum Vitae / 08
+            Curriculum Vitae
           </span>
           <h2 className="font-display font-light text-4xl mt-2">
             My <span className="italic font-light">Resume</span>
@@ -32,7 +32,7 @@ export default function Resume() {
         </div>
 
         <p className="text-text-muted text-sm md:text-base max-w-md leading-relaxed font-sans font-light">
-          My complete academic background, hackathon shipping logs, and technical competencies are compiled in a single-page document.
+          You can download my one-page resume as a PDF. It lists my coursework, hackathon history, and full technical details.
         </p>
 
         {/* Action Buttons */}

@@ -55,17 +55,17 @@ export default function Home() {
       <AnimatePresence>
         {activeOverlay && (
           <motion.div
-            initial={{ opacity: 0, y: "100%" }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: "100%" }}
-            transition={{ type: "spring", damping: 30, stiffness: 220 }}
-            className="fixed inset-0 z-50 bg-gradient-to-b from-bg-base via-[#FAF8F2] to-white dark:from-bg-base dark:via-[#1E2038] dark:to-[#151626] overflow-y-auto"
+            exit={{ opacity: 0, y: 15 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="fixed inset-0 z-50 bg-bg-base overflow-y-auto"
           >
             {/* Sticky Overlay Header */}
             <div className="sticky top-0 left-0 right-0 z-50 backdrop-blur-md bg-bg-base/80 border-b border-border py-4 px-6">
               <div className="max-w-5xl mx-auto flex justify-between items-center">
                 <span className="font-mono text-[10px] tracking-widest text-text-muted uppercase">
-                  {activeOverlay === "expertise" ? "Skills" : activeOverlay} / Detail View
+                  {activeOverlay === "expertise" ? "Skills" : activeOverlay}
                 </span>
                 
                 <button

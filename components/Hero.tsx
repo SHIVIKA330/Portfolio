@@ -8,16 +8,16 @@ export default function Hero() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.1 },
+      transition: { duration: 0.25 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const },
+      transition: { duration: 0.25, ease: "easeOut" as const },
     },
   };
 
@@ -37,7 +37,7 @@ export default function Hero() {
           <motion.div variants={itemVariants} className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
             <span className="font-mono text-[10px] uppercase tracking-widest text-accent font-medium">
-              Shivika Jain — Full Stack Developer & AI Builder
+              Shivika Jain — CS Student & Developer
             </span>
           </motion.div>
 
@@ -46,7 +46,7 @@ export default function Hero() {
             variants={itemVariants}
             className="font-display font-light text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight max-w-4xl"
           >
-            Building <span className="italic font-light"> impact-driven tools</span> and <span className="italic font-light">AI integrations</span>.
+            Building things that work—from APIs to TensorFlow PRs.
           </motion.h1>
 
           {/* Tagline Paragraph */}
@@ -54,7 +54,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-text-muted text-base md:text-lg max-w-xl leading-relaxed font-sans"
           >
-            I build at the intersection of AI, and social impact. Currently a Computer Science student, hackathon shipper, and contributor to the TensorFlow core runtime.
+            I&apos;m a computer science student at GLA University. Right now, I&apos;m focused on writing clean backend code, hacking on mobile/web projects with Next.js and Supabase, and trying to get more code merged into TensorFlow.
           </motion.p>
 
           {/* Action Links */}

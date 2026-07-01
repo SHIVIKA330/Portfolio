@@ -6,11 +6,11 @@ import { GithubIcon } from "@/components/ui/Icons";
 
 export default function Contributions() {
   const sectionVariants = {
-    hidden: { opacity: 0, y: 15 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" as const },
+      transition: { duration: 0.25, ease: "easeOut" as const },
     },
   };
 
@@ -33,7 +33,7 @@ export default function Contributions() {
           className="mb-12"
         >
           <span className="font-mono text-accent text-[10px] tracking-widest uppercase block">
-            Open Source / 05
+            Open Source
           </span>
           <h2 className="font-display font-light text-4xl mt-2">
             Community & <span className="italic font-light">Contributions</span>
@@ -47,7 +47,7 @@ export default function Contributions() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={sectionVariants}
-            className="relative bg-bg-surface backdrop-blur-md border border-border p-6 md:p-8 transition-colors hover:border-border-hover"
+            className="relative bg-bg-surface border border-border p-6 md:p-8 transition-colors hover:border-border-hover"
           >
             <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div className="space-y-4 max-w-2xl">
@@ -59,11 +59,11 @@ export default function Contributions() {
                   Contributing to TensorFlow Lite&apos;s C API
                 </h3>
                 <p className="text-xs text-text-muted leading-relaxed font-sans font-light">
-                  Diagnosed and patched memory error in{" "}
+                  I dug into the TensorFlow C++ source code to fix a memory leak in the{" "}
                   <code className="text-accent font-mono bg-bg-base border border-border px-1.5 py-0.5 rounded text-[10px]">
                     tf.raw_ops.ResourceSparseApplyAdagradV2
                   </code>
-                  . Focused on C++ API stability, logging structures, and TF Lite runtime.
+                   operation. It was a great exercise in understanding how large-scale C++ runtimes handle tensor allocations.
                 </p>
                 <div className="flex flex-wrap gap-2 pt-2">
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-border bg-bg-base text-text-muted text-[9px] font-mono">
@@ -98,7 +98,7 @@ export default function Contributions() {
             className="grid grid-cols-2 md:grid-cols-4 gap-4"
           >
             {gitMetrics.map((metric, idx) => (
-              <div key={idx} className="bg-bg-surface backdrop-blur-md border border-border p-5 text-center">
+              <div key={idx} className="bg-bg-surface border border-border p-5 text-center">
                 <span className="font-display font-light text-2xl text-text-primary block">
                   {metric.value}
                 </span>
@@ -115,7 +115,7 @@ export default function Contributions() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={sectionVariants}
-            className="bg-bg-surface backdrop-blur-md border border-border p-6 flex items-start gap-4 hover:border-border-hover transition-colors"
+            className="bg-bg-surface border border-border p-6 flex items-start gap-4 hover:border-border-hover transition-colors"
           >
             <div className="p-2.5 bg-bg-base border border-border text-accent shrink-0">
               <Award size={16} />
@@ -128,7 +128,7 @@ export default function Contributions() {
                 GSSoC Ambassador · GirlScript Summer of Code 2025
               </h4>
               <p className="text-xs text-text-muted mt-2 font-sans font-light leading-relaxed">
-                Driving open source culture, organizing events, and mentoring students at GLA University campus.
+                I help run workshops on Git and open-source contributions for students at my college campus.
               </p>
             </div>
           </motion.div>

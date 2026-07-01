@@ -39,11 +39,11 @@ const timelineData = [
 
 export default function Experience() {
   const headerVariants = {
-    hidden: { opacity: 0, y: 15 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" as const },
+      transition: { duration: 0.25, ease: "easeOut" as const },
     },
   };
 
@@ -59,7 +59,7 @@ export default function Experience() {
           className="mb-20"
         >
           <span className="font-mono text-accent text-[10px] tracking-widest uppercase block">
-            Experience / 04
+            Experience
           </span>
           <h2 className="font-display font-light text-4xl md:text-5xl mt-2">
             Journey & <span className="italic font-light">Shippings</span>
@@ -71,17 +71,17 @@ export default function Experience() {
           {timelineData.map((item, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: idx * 0.05 }}
+              transition={{ duration: 0.25 }}
               className="relative group"
             >
               {/* Timeline Indicator Dot */}
               <div className="absolute -left-[31px] md:-left-[45px] top-4 w-2.5 h-2.5 bg-accent rounded-full transition-transform group-hover:scale-125" />
 
               {/* Minimalist Card Container */}
-              <div className="border border-border bg-bg-base/20 backdrop-blur-md p-6 transition-colors duration-300 hover:border-border-hover">
+              <div className="border border-border bg-bg-surface p-6 transition-colors duration-300 hover:border-border-hover">
                 <div className="flex flex-wrap items-center justify-between gap-4 mb-3">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-border bg-bg-surface text-text-muted font-mono text-[9px]">
                     <Calendar size={10} /> {item.date}

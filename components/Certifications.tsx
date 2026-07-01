@@ -28,11 +28,11 @@ const certData = [
 
 export default function Certifications() {
   const sectionVariants = {
-    hidden: { opacity: 0, y: 15 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" as const },
+      transition: { duration: 0.25, ease: "easeOut" as const },
     },
   };
 
@@ -46,11 +46,11 @@ export default function Certifications() {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 15 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" as const },
+      transition: { duration: 0.25, ease: "easeOut" as const },
     },
   };
 
@@ -66,7 +66,7 @@ export default function Certifications() {
           className="mb-16"
         >
           <span className="font-mono text-accent text-[10px] tracking-widest uppercase block">
-            Recognition / 07
+            Recognition
           </span>
           <h2 className="font-display font-light text-4xl mt-2">
             Selected <span className="italic font-light">Credentials</span>
@@ -87,8 +87,8 @@ export default function Certifications() {
               variants={cardVariants}
               className={`min-w-[280px] md:min-w-0 snap-center flex-1 flex flex-col justify-between p-6 transition-colors duration-300 ${
                 cert.isGhost
-                  ? "border border-dashed border-border bg-bg-surface/20 backdrop-blur-md text-text-muted/40"
-                  : "border border-border bg-bg-surface backdrop-blur-md hover:border-border-hover"
+                  ? "border border-dashed border-border bg-bg-surface/20 text-text-muted/40"
+                  : "border border-border bg-bg-surface hover:border-border-hover"
               }`}
             >
               <div>

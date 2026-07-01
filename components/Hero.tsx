@@ -34,12 +34,12 @@ export default function Hero() {
           className="space-y-8 md:space-y-12"
         >
           {/* Label Badge */}
-          <motion.div variants={itemVariants} className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            <span className="font-mono text-[10px] uppercase tracking-widest text-accent font-medium">
-              Shivika Jain — CS Student & Developer
-            </span>
-          </motion.div>
+          <motion.div variants={itemVariants}>
+              <span className="inline-flex items-center gap-2 text-sm text-text-muted bg-bg-secondary border border-border rounded-full px-4 py-1.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                Available for opportunities
+              </span>
+            </motion.div>
 
           {/* Large Editorial Headline */}
           <motion.h1

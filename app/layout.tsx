@@ -25,10 +25,10 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: 'Shivika Jain — Full-Stack Developer',
-  description: 'CS student at GLA University. TensorFlow contributor. Building at the intersection of fintech, AI, and social impact.',
+  description: 'CS student at GLA University building full-stack apps, shipping projects at hackathons, and contributing to TensorFlow.',
   openGraph: {
     title: 'Shivika Jain',
-    description: 'Full-stack developer. Hackathon builder. TensorFlow contributor.',
+    description: 'CS student at GLA University building full-stack apps, shipping projects at hackathons, and contributing to TensorFlow.',
     url: 'https://shivika.onrender.com',
   },
 };

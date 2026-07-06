@@ -20,7 +20,7 @@ export default function BookMeeting() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.4, ease: "easeOut", delay: 0.1 },
+      transition: { duration: 0.4, ease: "easeOut" as const, delay: 0.1 },
     },
   };
 

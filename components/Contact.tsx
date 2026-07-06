@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Send } from "lucide-react";
+import { Mail, Send, Video } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 
 export default function Contact() {
@@ -70,6 +70,16 @@ export default function Contact() {
             aria-label="GitHub"
           >
             <GithubIcon size={16} />
+          </a>
+          <a
+            href="https://calendar.app.google/dGuAHA5Rioajgie78"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 h-12 px-4 border border-accent/30 bg-accent/5 hover:border-accent text-accent hover:bg-accent/10 transition-colors font-mono text-[10px] tracking-widest uppercase"
+            aria-label="Book a Meeting"
+          >
+            <Video size={14} />
+            Book a Call
           </a>
         </div>
 

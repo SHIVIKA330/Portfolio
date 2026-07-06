@@ -10,6 +10,7 @@ import Expertise from "@/components/Expertise";
 import Certifications from "@/components/Certifications";
 import Resume from "@/components/Resume";
 import Contact from "@/components/Contact";
+import BookMeeting from "@/components/BookMeeting";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 
@@ -49,6 +50,7 @@ export default function Home() {
 
       {/* Slide 2 & 3: Resume & Contact (Statically scrolled at bottom) */}
       <Resume />
+      <BookMeeting />
       <Contact />
 
       {/* Fullscreen Overlay Panels */}

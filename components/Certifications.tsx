@@ -4,6 +4,14 @@ import { motion } from "framer-motion";
 
 const certData = [
   {
+    icon: "☁️",
+    name: "Administrator Certification Prep",
+    issuer: "Salesforce Trailhead",
+    year: "2024",
+    link: "https://trailhead.salesforce.com/content/learn/trails/administrator-certification-prep",
+    isGhost: false,
+  },
+  {
     icon: "🍃",
     name: "MongoDB Associate Developer",
     issuer: "MongoDB University",
@@ -18,9 +26,23 @@ const certData = [
     isGhost: false,
   },
   {
+    icon: "📊",
+    name: "SQL (Basic) Certificate",
+    issuer: "HackerRank",
+    year: "2024",
+    isGhost: false,
+  },
+  {
+    icon: "🤖",
+    name: "Generative AI / ML Foundations",
+    issuer: "AWS Educate",
+    year: "2024",
+    isGhost: false,
+  },
+  {
     icon: "✦",
-    name: "Upcoming",
-    issuer: "Next validation in progress",
+    name: "Salesforce Administrator (ADM-201)",
+    issuer: "In Progress",
     year: "—",
     isGhost: true,
   },
@@ -109,7 +131,13 @@ export default function Certifications() {
                     cert.isGhost ? "text-text-muted/40" : "text-text-primary"
                   }`}
                 >
-                  {cert.name}
+                  {cert.link ? (
+                    <a href={cert.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                      {cert.name}
+                    </a>
+                  ) : (
+                    cert.name
+                  )}
                 </h3>
                 <p className="text-xs font-mono text-text-muted mt-2 leading-relaxed">
                   {cert.issuer}

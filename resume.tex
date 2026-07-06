@@ -1,0 +1,212 @@
+%-------------------------
+% Resume in Latex
+% Author : Shivika Jain
+% Tailored for: Software Engineer (Day0 Graduate / CoE) -- Juspay
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage[scale=0.90,lf]{FiraMono}
+
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
+
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault} 
+\usepackage[T1]{fontenc}
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Optimizing margins for perfect one-page fit
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{0in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.65in}
+\addtolength{\textheight}{1.3in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat {\section}{
+    \bfseries \vspace{2pt} \raggedright \large 
+}{}{0em}{}[\color{light-grey} {\titlerule[2pt]} \vspace{-4pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\ 
+      \textit{#3} & {\color{dark-grey} \small #4}\\ 
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+\color{text-grey}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge Shivika Jain} \\ \vspace{4pt}
+    \small 
+    \faPhone* \texttt{+91-82798 44626} \hspace{1pt} $|$
+    \hspace{1pt} \faEnvelope \hspace{1pt} \texttt{shivikaj47@gmail.com} \hspace{1pt} $|$ 
+    \hspace{1pt} \faLinkedin \hspace{1pt} \href{https://www.linkedin.com/in/shivikajain330/}{shivikajain330} \hspace{1pt} $|$
+    \faGithub \hspace{1pt} \href{https://github.com/SHIVIKA330}{SHIVIKA330} \hspace{1pt} $|$
+    \faGlobe \hspace{1pt} \href{https://portfolio-ohp1.onrender.com}{Portfolio}
+    \\ \vspace{-4pt}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{PROFESSIONAL SUMMARY}
+  \small{
+Computer Science \& Engineering student (Class of 2027) combining solid full-stack development experience with a strong interest in low-level systems programming, reliability, and functional concepts. Contributed to TensorFlow's core C++ runtime, resolving memory safety and runtime issues under maintainer code review. Experienced in building responsive web applications using Next.js/TypeScript and integrating APIs for automated, event-driven workflows. Enthusiastic about applying first-principles thinking to architect scalable, resilient payment orchestration systems and performance-critical infrastructure.
+  }
+\vspace{-4pt}
+
+%-----------EDUCATION-----------
+\section {EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {GLA University}{2023 -- 2027}
+      {Bachelor of Technology in Computer Science and Engineering}{Mathura, India}
+      	\resumeItemListStart
+    	\resumeItem {\textbf{Relevant Coursework}: Data Structures \& Algorithms, Operating Systems, Computer Networks, Database Management Systems (DBMS), Software Engineering, Probability \& Statistics.}
+        \resumeItem {\textbf{Key Achievements}: MongoDB Certified Associate Developer, AWS Educate ML Foundations, GirlScript Summer of Code Ambassador.}
+        \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{TECHNICAL SKILLS}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+     \textbf{Languages \& Paradigms} {: TypeScript, JavaScript, Python, SQL, C/C++, Java, Go; Functional programming concepts (immutability, pure functions, declarative code, typing)}\vspace{1pt} \\
+     \textbf{Backend \& Integration} {: Node.js, FastAPI, REST APIs, automated triggers, payment gateways (Razorpay), caching (Upstash Redis)}\vspace{1pt} \\
+     \textbf{Frontend \& SDKs} {: Next.js, React, HTML5/CSS3, responsive UI/UX workflows, client-side persistence (localStorage)}\vspace{1pt} \\
+     \textbf{Databases} {: PostgreSQL, MongoDB, Supabase, Firebase Firestore, MySQL}\vspace{1pt} \\
+     \textbf{Infrastructure \& Tools} {: Docker, Git/GitHub, CI/CD workflows, Linux/Bash scripting, systems validation \& health-checks}\vspace{1pt} \\
+    }}
+ \end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{EXPERIENCE \& TRAINING}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {TensorFlow (Google Open Source)}{Oct. 2024 -- Present}
+      {Open Source Contributor}{Remote}
+      \resumeItemListStart
+        \resumeItem{Patched a memory safety bug in \texttt{tf.raw\_ops.ResourceSparseApplyAdagradV2} in the TensorFlow C++ runtime to prevent crashes and optimize mobile/edge memory stability.}
+        \resumeItem{Analyzed compiler toolchains and debugged CI/CD build logs to resolve configuration issues, ensuring robust multi-environment builds across Windows and Unix platforms.}
+        \resumeItem{Collaborated with Google maintainers through strict code reviews, adhering to codebase conventions, performance standards, and rigorous unit testing protocols.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {GLA University / KVCH}{June 2024 -- July 2024}
+      {Software Development Trainee (Java)}{Mathura, India}
+      \resumeItemListStart
+        \resumeItem{Built server-side logic and database models using Java for university applications, ensuring reliable MVC architectures and query performance.}
+        \resumeItem{Configured and maintained local sandbox servers on Linux VMs (VirtualBox), scripting automated backup jobs to maintain environment consistency.}
+        \resumeItem{Containerized application services using Docker to simplify deployments and match testing environments with development configurations.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {India Space Academy (Collaborated with ISRO \& NASA)}{July 2025 -- Aug. 2025}
+      {Data Systems Intern}{Remote / Delhi, India}
+      \resumeItemListStart
+        \resumeItem{Wrote data ingestion and validation scripts in Python to process telemetry datasets, optimizing query performance for analytical routines.}
+        \resumeItem{Designed relational schemas and wrote SQL queries to process structured logs, ensuring data integrity and high availability during ingestion.}
+        \resumeItem{Developed sanity check and API health monitoring scripts to automate verification of endpoint accessibility and minimize system downtime.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{PROJECTS}
+    \resumeSubHeadingListStart
+    
+      \resumeProjectHeading
+         {\textbf{OffShift -- Parametric Payout \& Orchestration Platform} $|$ \emph{Next.js, TypeScript, Supabase, Upstash Redis, Razorpay API}}{2026}
+          \resumeItemListStart
+            \resumeItem{Engineered a serverless payout system that automatically triggers financial compensation based on real-time service outages (via Downdetector API integration).}
+            \resumeItem{Integrated Razorpay's API to support automated multi-merchant payouts, writing robust custom error-handling and input validation layers to handle partial failures.}
+            \resumeItem{Implemented caching structures via Upstash Redis to throttle duplicate event payouts and prevent double-spending anomalies. \textbf{Code}: \href{https://github.com/SHIVIKA330/OffShift}{github.com/SHIVIKA330/OffShift}}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+         {\textbf{Phishing-Detector -- Real-Time Threat Analysis Chrome Extension} $|$ \emph{JavaScript, Chrome Extension APIs}}{2026}
+          \resumeItemListStart
+            \resumeItem{Built a browser extension that evaluates active page URLs and payloads in real time using heuristic pattern-matching to flag indicators of spoofing.}
+            \resumeItem{Optimized script execution to execute asynchronously off the main thread, ensuring zero-latency page loading for active browser tabs.}
+            \resumeItem{Designed clean user interfaces and popup warnings using vanilla HTML/CSS to communicate trust levels and threat reports clearly. \textbf{Code}: \href{https://github.com/SHIVIKA330/Phishing-Detector}{github.com/SHIVIKA330/Phishing-Detector}}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+         {\textbf{ET-Concierge (Artha) -- AI Assistant Backend} $|$ \emph{FastAPI, LLM APIs, System Diagnostics}}{2026}
+          \resumeItemListStart
+            \resumeItem{Developed a FastAPI backend to handle high-frequency LLM requests, implementing request validation and exception tracking layers.}
+            \resumeItem{Designed database tables for session management and conversational state logging, optimizing query performance. \textbf{Live}: \href{https://et-concierge.onrender.com/}{et-concierge.onrender.com}}
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+%-----------CERTIFICATIONS-----------
+\section{CERTIFICATIONS}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{MongoDB Certified Associate Developer} -- MongoDB University}{2024}
+    \resumeProjectHeading
+      {\textbf{Full Stack Development (Java)} -- KVCH}{2024}
+    \resumeProjectHeading
+      {\textbf{AWS Educate Generative AI / Machine Learning Foundations}}{2026}
+  \resumeSubHeadingListEnd
+
+\end{document}

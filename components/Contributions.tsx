@@ -41,6 +41,99 @@ export default function Contributions() {
         </motion.div>
 
         <div className="space-y-6">
+          {/* Meshery (CNCF) Hero Card */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={sectionVariants}
+            className="relative bg-bg-surface border border-border p-6 md:p-8 transition-colors hover:border-border-hover"
+          >
+            <div className="relative z-10 space-y-6">
+              <div className="space-y-3">
+                <div className="flex items-center gap-2 text-text-muted font-mono text-[11px]">
+                  <GithubIcon size={14} className="text-accent" />
+                  <span>meshery / meshery (CNCF)</span>
+                </div>
+                <h3 className="text-xl font-display font-medium text-text-primary">
+                  Cloud-Native Management & UI Contributions (Meshery)
+                </h3>
+                <p className="text-xs text-text-muted leading-relaxed font-sans font-light">
+                  Active contributor to Meshery, the CNCF cloud-native management plane. Resolved UI component state management, code block copy button positioning, and frontend accessibility features across the platform.
+                </p>
+              </div>
+
+              {/* Meshery PR Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+                <div className="bg-bg-base border border-border p-4 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <span className="text-[10px] font-mono text-accent font-semibold">PR #20790</span>
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full border border-border text-text-muted text-[8px] font-mono">
+                        <Shield size={9} className="text-accent" /> MERGED
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-text-muted font-sans font-light">
+                      Core feature and component enhancements in Meshery ecosystem.
+                    </p>
+                  </div>
+                  <a
+                    href="https://github.com/meshery/meshery/pull/20790"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-text-primary text-[10px] font-mono uppercase tracking-wider mt-3 hover:text-accent transition-colors"
+                  >
+                    View PR <GitPullRequest size={10} />
+                  </a>
+                </div>
+
+                <div className="bg-bg-base border border-border p-4 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <span className="text-[10px] font-mono text-accent font-semibold">PR #20796</span>
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full border border-border text-text-muted text-[8px] font-mono">
+                        <Shield size={9} className="text-accent" /> MERGED
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-text-muted font-sans font-light">
+                      UI layout, bug fixes, and component refinements in Meshery codebase.
+                    </p>
+                  </div>
+                  <a
+                    href="https://github.com/meshery/meshery/pull/20796"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-text-primary text-[10px] font-mono uppercase tracking-wider mt-3 hover:text-accent transition-colors"
+                  >
+                    View PR <GitPullRequest size={10} />
+                  </a>
+                </div>
+
+                <div className="bg-bg-base border border-border p-4 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <span className="text-[10px] font-mono text-accent font-semibold">PR #20809</span>
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full border border-border text-text-muted text-[8px] font-mono">
+                        <Shield size={9} className="text-accent" /> MERGED
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-text-muted font-sans font-light">
+                      Repositioned code block copy buttons, optimized window controls & UI clipboard interactions.
+                    </p>
+                  </div>
+                  <a
+                    href="https://github.com/meshery/meshery/pull/20809"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-text-primary text-[10px] font-mono uppercase tracking-wider mt-3 hover:text-accent transition-colors"
+                  >
+                    View PR <GitPullRequest size={10} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
           {/* TensorFlow Hero Card */}
           <motion.div
             initial="hidden"

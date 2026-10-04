@@ -54,7 +54,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-text-muted text-base md:text-lg max-w-xl leading-relaxed font-sans"
           >
-            I&apos;m Shivika — a CS student at GLA University building full-stack applications, shipping at hackathons, and contributing to the TensorFlow core runtime.
+            I&apos;m Shivika — a CS student at GLA University building full-stack applications, shipping at hackathons, and contributing to the TensorFlow and Meshery, currently working as a student intern at Nokia.
           </motion.p>
 
           {/* Action Links */}
@@ -82,7 +82,7 @@ export default function Hero() {
 
       {/* Subtle Bottom Page Indicator */}
       <div className="w-full max-w-5xl mx-auto flex justify-between items-center text-[10px] font-mono text-text-faint tracking-widest border-t border-border pt-6">
-        <span>LOC // MATHURA, UP</span>
+        <span>LOC // Gurgaon, Haryana</span>
         <button
           onClick={() => {
             document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });

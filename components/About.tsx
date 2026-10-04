@@ -61,10 +61,10 @@ export default function About() {
 
             <div className="space-y-6 text-text-muted text-sm md:text-base leading-relaxed font-sans font-light">
               <p>
-                I&apos;m currently in my third year of Computer Science at GLA University. I spend most of my free time at hackathons or looking at open-source codebases. I like building tools that actually solve day-to-day problems rather than just talking about them.
+                Computer Science student and full-stack engineer with hands-on experience building API-driven platforms, data pipelines, and scalable backend services. Currently a Student Intern at Nokia and pursuing my B.Tech at GLA University.
               </p>
               <p>
-                I mostly work with TypeScript, Next.js, and Java, but I&apos;m comfortable jumping into C++ or Python when a project needs it. I care a lot about database layout, clear APIs, and keeping things fast.
+                I work across Python, Java, JavaScript, TypeScript, Go, C/C++, and SQL, alongside AI/ML frameworks (Llama 3.1 70B, scikit-learn, XGBoost). I care deeply about clean REST API design, database schemas, latency optimization, and open-source contributions.
               </p>
             </div>
 

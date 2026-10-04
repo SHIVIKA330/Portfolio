@@ -5,33 +5,38 @@ import { Calendar, MapPin } from "lucide-react";
 
 const timelineData = [
   {
-    date: "2026",
-    title: "DEVTrails × Guidewire Hackathon · Team TechnoTribe",
-    subtitle: "OffShift — Parametric insurance, shipped in 24hr",
-    location: "DEVTrails Hub",
+    date: "2026 – Present",
+    title: "Student Intern · Nokia",
+    subtitle: "Working with Nokia engineering teams on software development tasks, contributing code, and learning production engineering practices through code reviews, documentation, and agile workflows.",
+    location: "Nokia Engineering",
+  },
+  {
+    date: "July 2025 – Aug 2025",
+    title: "Remote Sensing & GIS Intern · ISRO",
+    subtitle: "Analyzed multi-spectral satellite datasets in Google Earth Engine for NDVI / vegetation-stress mapping across large regions.",
+    location: "Indian Space Research Organisation",
+  },
+  {
+    date: "June 2023 – Sept 2023",
+    title: "Full-Stack Developer · Jain Kante Wale (Logistics)",
+    subtitle: "Built a WhatsApp-integrated complaint management system (Node.js, Express.js, WhatsApp Business API) for a live client, cutting response latency by 60%.",
+    location: "Logistics Client",
   },
   {
     date: "2026",
     title: "ET AI Hackathon 2026",
-    subtitle: "ET Concierge — NVIDIA Llama 3.1 70B",
+    subtitle: "Built ET-Concierge — AI Financial Twin using NVIDIA Llama 3.1 70B & Yahoo Finance API.",
     location: "ET Online",
   },
-  
   {
     date: "2026",
-    title: "Quint Beauty",
-    subtitle: "Serverless e-commerce build, personal project",
-    location: "Remote",
+    title: "DEVTrails × Guidewire Hackathon · OffShift",
+    subtitle: "OffShift — Parametric income insurance platform for gig workers, shipped in 24hr.",
+    location: "DEVTrails Hub",
   },
   {
-    date: "2024",
-    title: "Industrial Training — Full-Stack Java Development",
-    subtitle: "KVCH via GLA University, Mathura",
-    location: "Mathura Campus",
-  },
-  {
-    date: "2023–Present",
-    title: "B.Tech Computer Science Engineering · Ongoing",
+    date: "2023 – 2027",
+    title: "B.Tech Computer Science and Engineering",
     subtitle: "GLA University, Mathura",
     location: "Mathura, UP",
   },
